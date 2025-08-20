@@ -1,18 +1,31 @@
 title: Stateless Machine
 description: Your blog description
 baseurl: ""
-url: "https://onlypwn.net"
+url: "https://statless.computer"
+author:
+  name: vm
+  email: vm@stateless.computer
+
+
 
 markdown: kramdown
 highlighter: rouge
 theme: minima
 
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-# Social links for minima theme
 minima:
+  show_excerpts: true
   social_links:
-    - { platform: twitter, user_url: "https://x.com/cvewhen" }
-    - { platform: linkedin, user_url: "https://linkedin.com/in/debxrshi" }
+    - title: Github
+      icon: github
+      url: "https://github.com/jekyll/1ikeadragon"
+    - title: Xitter
+      icon: x-twitter
+      url: "https://x.com/cvewhen"
+    - title: LinkedIn
+      icon: linkedin
+      url: "https://linkedin.com/in/debxrshi"
