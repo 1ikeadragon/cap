@@ -10,3 +10,9 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+# Social links for minima theme
+minima:
+  social_links:
+    - { platform: twitter, user_url: "https://x.com/cvewhen" }
+    - { platform: linkedin, user_url: "https://linkedin.com/in/debxrshi" }
