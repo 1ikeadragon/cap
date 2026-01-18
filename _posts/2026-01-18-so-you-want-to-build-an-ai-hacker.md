@@ -5,7 +5,7 @@ date: 2026-01-18 00:00:00 +0000
 categories: blog
 ---
 
-Everyone wants to build the next Ultron, so, why shouldn't you? Exercise your right to participate in the arms race to wipeout human creativity and craftsmanship with as cheap as a $30 investment and a few ounces of your sanity. 
+Everyone wants to build the next Ultron of cybersecurity, so, why shouldn't you? Exercise your right to participate in the arms race to wipeout human creativity and craftsmanship with as cheap as a $30 investment and a few ounces of your sanity. 
 
 This is a documentation of my experience building autonomous hacking systems. We'll start with harness design, learn what worked, what didn't and finally, the output.
 
@@ -13,9 +13,9 @@ By the end of this post you should have enough clarity to get that VC funding or
 ## Inside your AI hacker are two wolves
 There's a phase by phase linear flow system and then there's a REPL, loop driven system.
 
-## Phased Design 
+### Phased Design 
 
-## Feedback Loop
+### Feedback Loop
 
 ## But API too costly gang 
 Yes, if you use OpenAI or, Anthropic Keys you will be spending 600 USD by 14th of the month. But where there's poverty and curiosity, there's three special words:
@@ -24,25 +24,55 @@ China numba wun
 
 Unlike the mainstream providers, Chinese open-weight models are cheaper and actually quite performant. They are definitely punching above the weight that they charge for. Models like Kimi and GLM are raising the bar with every release and let lightweight pockets like mine experiment without losing rent.
 
-For this system, I had used Z.ai's GLM 4.7. Chef's kiss model at dirt cheap price.
+For this system, I used Z.ai's GLM 4.7. Chef's kiss model at dirt cheap price.
 
 >Disclaimer:  
 This post is **not sponsored** by z.ai. Not that I would mind getting sponsored (pls).
 
 ## Writing the first agent
-
-## Skill issues
-
-## Recon
-
-## Pentest
-
-## Correlation is causation of better vulns
+Okay, now you have the API and the agent design patterns down, let's write the first agent. On a basic level, this will be a single harnessing agent with multiple sub-agents in the flow. You can't hack what you can't see. So first sub-agent will be a recon agent, then we'll have our threat-modeller agent to theorize threat scenarios in context of the application and finally we have the actual hunter agent to execute those threat scenarios.
 
 
-## Mostly automating authenticated scanning 
+Create the agent
 
-## Sweet but wher UI
+```python
+import claude_agent_sdk
+
+CreateAgentDefintion():
+    name = "recon"
+    description = "Recon agent"
+    return agent
+
+recon_agent()
+```
+
+Now building the threat modelling agent.
+```python
+CreateAgentDefintion():
+    name = "threat_modeller"
+    description = "Threat modeller agent"
+    return agent
+
+threat_modeller_agent()
+```
+
+Finally, the attack agent.
+
+```python
+CreateAgentDefintion():
+    name = "hunter"
+    description = "Hunter agent"
+    return agent
+
+hunter_agent()
+```
+### Skill issues
+
+### Correlation is causation of better vulns
+
+### Mostly automating authenticated scanning 
+
+### Sweet but wher UI
 
 
 
@@ -50,12 +80,21 @@ This post is **not sponsored** by z.ai. Not that I would mind getting sponsored 
 
 Up until a few years ago, memory management to me meant dealing with `malloc` and hunting User-After-Frees. Now, it's making sure your agents don't get premature dementia.
 
-## Context rot and feedback loops
+### Context rot and feedback loops
 
-## You're absolutely right
+### You're absolutely right
+
+## Hunting 0-days and farming aura
+
+### Target selection
+
+### Another agent bites the flow    
+
+### Target practise
+
 
 ## Fruits of 16 hours of code and $30
 
 
-## Ermm but what colour is your evals?
+## Ermm but what colour is your evals
 
