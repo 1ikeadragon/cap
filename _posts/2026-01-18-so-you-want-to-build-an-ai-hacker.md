@@ -18,21 +18,33 @@ There's a phase by phase linear flow system and then there's a REPL, loop driven
 ## Feedback Loop
 
 ## But API Too Costly Gang 
+Yes, if you use OpenAI or, Anthropic Keys you will be spending 600 USD by 14th of the month. But where there's poverty and curiosity, there's three special words:
 
+China numba wun
 
-China numba wun!!! RAAAAAAH!!!
+Unlike the mainstream providers, Chinese open-weight models are cheaper and actually quite performant. They are definitely punching above the weight that they charge for. Models like Kimi and GLM are raising the bar with every release and let lightweight pockets like mine experiment without losing rent.
 
-When in doubt, trade with China.
+For this system, I had used Z.ai's GLM 4.7. Chef's kiss model at dirt cheap price.
 
-This post is not sponsored by z.ai. Not that I would mind getting sponsored (pls).
-GLM ftw
+>Disclaimer:  
+This post is **not sponsored** by z.ai. Not that I would mind getting sponsored (pls).
 
-## Getting the First Scan Up
-
+## Writing the First Agent
 
 ## Skill Issues
 
+## Recon
+
+## Pentest
+
+## Correlation is Causation of Better Vulns
+
+
 ## Mostly Automating Authenticated Scanning 
+
+## Sweet But UI Wher
+
+
 
 ## Memory Management
 
