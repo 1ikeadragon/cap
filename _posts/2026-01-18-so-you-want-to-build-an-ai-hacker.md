@@ -54,5 +54,8 @@ Up until a few years ago, memory management to me meant dealing with `malloc` an
 
 ## You're absolutely right
 
-
 ## Fruits of 16 hours of code and $30
+
+
+## Ermm but what colour is your evals?
+
