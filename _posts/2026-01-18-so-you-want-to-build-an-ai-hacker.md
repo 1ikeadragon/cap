@@ -5,7 +5,7 @@ date: 2026-01-18 00:00:00 +0000
 categories: blog
 ---
 
-Everyone wants to build the next Ultron, so, why shouldn't you? Exercise your right to participate in the arms race to wipeout human creativity and craftsmanship with as cheap as a 30 USD investment and a few ounces of your sanity. 
+Everyone wants to build the next Ultron, so, why shouldn't you? Exercise your right to participate in the arms race to wipeout human creativity and craftsmanship with as cheap as a $30 investment and a few ounces of your sanity. 
 
 This is a documentation of my experience building autonomous hacking systems. We'll start with harness design, learn what worked, what didn't and finally, the output.
 
