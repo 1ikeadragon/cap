@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Tree Planted in Every Code Security Tool"
+title: "The Tree Securing Your Code"
 date: 2025-10-22 12:00:00 +0000
 categories: blog
 ---
