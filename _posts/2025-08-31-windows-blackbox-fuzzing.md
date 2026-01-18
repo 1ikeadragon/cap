@@ -19,7 +19,7 @@ For the demo, I will use mp3 player, a real-world windows software which is know
 6. Profit. 
 
 So for this, you will need the tools - Ghidra/IDA/Binary Ninja, DynamoRIO, Jackalope, and of course, the binary itself - EasyMP3Player.
-## Software design of Windows Applications
+## Software design of Windows applications
 
 
 ## What to fuzz

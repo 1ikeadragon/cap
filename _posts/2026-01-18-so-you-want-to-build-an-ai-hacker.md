@@ -10,14 +10,14 @@ Everyone wants to build the next Ultron, so, why shouldn't you? Exercise your ri
 This is a documentation of my experience building autonomous hacking systems. We'll start with harness design, learn what worked, what didn't and finally, the output.
 
 By the end of this post you should have enough clarity to get that VC funding or at least score 90% on X-Bench and self-declare yourself the goat.
-## Inside Your AI Hacker Are Two Wolves
+## Inside your AI hacker are two wolves
 There's a phase by phase linear flow system and then there's a REPL, loop driven system.
 
 ## Phased Design 
 
 ## Feedback Loop
 
-## But API Too Costly Gang 
+## But API too costly gang 
 Yes, if you use OpenAI or, Anthropic Keys you will be spending 600 USD by 14th of the month. But where there's poverty and curiosity, there's three special words:
 
 China numba wun
@@ -29,36 +29,30 @@ For this system, I had used Z.ai's GLM 4.7. Chef's kiss model at dirt cheap pric
 >Disclaimer:  
 This post is **not sponsored** by z.ai. Not that I would mind getting sponsored (pls).
 
-## Writing the First Agent
+## Writing the first agent
 
-## Skill Issues
+## Skill issues
 
 ## Recon
 
 ## Pentest
 
-## Correlation is Causation of Better Vulns
+## Correlation is causation of better vulns
 
 
-## Mostly Automating Authenticated Scanning 
+## Mostly automating authenticated scanning 
 
-## Sweet But UI Wher
+## Sweet but wher UI
 
 
 
-## Memory Management
+## Memory management
 
 Up until a few years ago, memory management to me meant dealing with `malloc` and hunting User-After-Frees. Now, it's making sure your agents don't get premature dementia.
 
-## Context Rot and Feedback Loops
+## Context rot and feedback loops
 
-## You're Absolutely Right
-
-
-
-## CVE 2026-XXXX
+## You're absolutely right
 
 
-## CVE 2026-XXXX
-
-## CVE-2026-XXXX
+## Fruits of 16 hours of code and $30
