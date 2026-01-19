@@ -21,7 +21,7 @@ sinners judging sinners who sin differently
 ### Human in da loop
 
 ## But API too costly gang 
-Yes, if you use OpenAI or, Anthropic Keys you will be spending 600 USD by 14th of the month. But where there's poverty and curiosity, there's three special words:
+Yes, if you use OpenAI or, Anthropic Keys you will be spending $600 by 14th of the month. But where there's poverty and curiosity, there's three special words:
 
 China numba wun
 
@@ -82,6 +82,8 @@ hunter_agent()
 ## Memory management
 
 Up until a few years ago, memory management to me meant dealing with `malloc` and hunting User-After-Frees. Now, it's making sure your agents don't get premature dementia.
+
+![memory-in-ui](assets/img/memory-in-ui.png)
 
 ### Context rot and feedback loops
 
