@@ -10,12 +10,15 @@ Everyone wants to build the next Ultron of cybersecurity, so, why shouldn't you?
 This is a documentation of my experience building autonomous hacking systems. We'll start with harness design, learn what worked, what didn't and finally, the output.
 
 By the end of this post you should have enough clarity to get that VC funding or at least score 90% on X-Bench and self-declare yourself the goat.
-## Inside your AI hacker are two wolves
+## Inside your AI hacker there are three wolves
 There's a phase by phase linear flow system and then there's a REPL, loop driven system.
 
 ### Phased Design 
 
-### Feedback Loop
+### Recursive harness
+sinners judging sinners who sin differently
+
+### Human in da loop
 
 ## But API too costly gang 
 Yes, if you use OpenAI or, Anthropic Keys you will be spending 600 USD by 14th of the month. But where there's poverty and curiosity, there's three special words:
