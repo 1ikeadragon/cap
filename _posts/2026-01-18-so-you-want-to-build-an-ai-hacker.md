@@ -7,7 +7,7 @@ categories: blog
 
 Everyone wants to build the next Ultron of cybersecurity, so, why shouldn't you? Exercise your right to participate in the arms race to wipeout human creativity and craftsmanship with as cheap as a $30 investment and a few ounces of your sanity. 
 
-This is a documentation of my experience building autonomous hacking systems. We'll start with harness design, learn what worked, what didn't and finally, the output.
+This is a slice of my experience building autonomous hacking systems. We'll start with harness design, learn what worked, what didn't and finally, the output.
 
 By the end of this post you should have enough clarity to get that VC funding or at least score 90% on X-Bench and self-declare yourself the goat.
 ## Inside your AI hacker there are three wolves
