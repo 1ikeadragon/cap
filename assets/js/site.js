@@ -144,6 +144,7 @@
       }
 
       document.body.classList.remove("page-entering");
+      void document.body.offsetWidth;
       document.body.classList.add("page-leaving");
 
       window.setTimeout(() => {
