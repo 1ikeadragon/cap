@@ -314,100 +314,164 @@ body.page-leaving .page-mask {
   animation: page-mask-leave 1300ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* FSM node animations: in + out per node, staggered forgetting */
+/* ─── page-entering: slow dramatic forgetting, ~2112ms window ─── */
 
-body.page-entering .fsm-node-a,
-body.page-leaving .fsm-node-a {
+body.page-entering .fsm-node-a {
   animation:
     fsm-node-in  480ms cubic-bezier(0.22, 1, 0.36, 1) 0ms   forwards,
     fsm-node-out 500ms ease-in                         1340ms forwards;
 }
 
-body.page-entering .fsm-node-b,
-body.page-leaving .fsm-node-b {
+body.page-entering .fsm-node-b {
   animation:
     fsm-node-in  480ms cubic-bezier(0.22, 1, 0.36, 1) 60ms  forwards,
     fsm-node-out 480ms ease-in                         1080ms forwards;
 }
 
-body.page-entering .fsm-node-c,
-body.page-leaving .fsm-node-c {
+body.page-entering .fsm-node-c {
   animation:
     fsm-node-in  460ms cubic-bezier(0.22, 1, 0.36, 1) 140ms forwards,
     fsm-node-out 460ms ease-in                         800ms  forwards;
 }
 
-body.page-entering .fsm-node-d,
-body.page-leaving .fsm-node-d {
+body.page-entering .fsm-node-d {
   animation:
     fsm-node-in  480ms cubic-bezier(0.22, 1, 0.36, 1) 80ms  forwards,
     fsm-node-out 480ms ease-in                         1210ms forwards;
 }
 
-body.page-entering .fsm-node-e,
-body.page-leaving .fsm-node-e {
+body.page-entering .fsm-node-e {
   animation:
     fsm-node-in  460ms cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards,
     fsm-node-out 460ms ease-in                         940ms  forwards;
 }
 
-body.page-entering .fsm-node-f,
-body.page-leaving .fsm-node-f {
+body.page-entering .fsm-node-f {
   animation:
     fsm-node-in  440ms cubic-bezier(0.22, 1, 0.36, 1) 230ms forwards,
     fsm-node-out 460ms ease-in                         660ms  forwards;
 }
 
-/* FSM edge animations: in + orphan-out per edge */
-
-body.page-entering .fsm-edge-ab,
-body.page-leaving .fsm-edge-ab {
+body.page-entering .fsm-edge-ab {
   animation:
     fsm-edge-in  380ms cubic-bezier(0.22, 1, 0.36, 1) 30ms  forwards,
     fsm-edge-out 400ms ease-in                         1270ms forwards;
 }
 
-body.page-entering .fsm-edge-ad,
-body.page-leaving .fsm-edge-ad {
+body.page-entering .fsm-edge-ad {
   animation:
     fsm-edge-in  380ms cubic-bezier(0.22, 1, 0.36, 1) 45ms  forwards,
     fsm-edge-out 380ms ease-in                         1400ms forwards;
 }
 
-body.page-entering .fsm-edge-bc,
-body.page-leaving .fsm-edge-bc {
+body.page-entering .fsm-edge-bc {
   animation:
     fsm-edge-in  360ms cubic-bezier(0.22, 1, 0.36, 1) 90ms  forwards,
     fsm-edge-out 420ms ease-in                         1000ms forwards;
 }
 
-body.page-entering .fsm-edge-be,
-body.page-leaving .fsm-edge-be {
+body.page-entering .fsm-edge-be {
   animation:
     fsm-edge-in  360ms cubic-bezier(0.22, 1, 0.36, 1) 105ms forwards,
     fsm-edge-out 400ms ease-in                         1130ms forwards;
 }
 
-body.page-entering .fsm-edge-de,
-body.page-leaving .fsm-edge-de {
+body.page-entering .fsm-edge-de {
   animation:
     fsm-edge-in  360ms cubic-bezier(0.22, 1, 0.36, 1) 120ms forwards,
     fsm-edge-out 400ms ease-in                         1140ms forwards;
 }
 
-body.page-entering .fsm-edge-cf,
-body.page-leaving .fsm-edge-cf {
+body.page-entering .fsm-edge-cf {
   animation:
     fsm-edge-in  350ms cubic-bezier(0.22, 1, 0.36, 1) 175ms forwards,
     fsm-edge-out 440ms ease-in                         870ms  forwards;
 }
 
-/* E→F is the breaking edge — it drifts off-target instead of fading cleanly */
-body.page-entering .fsm-edge-ef,
-body.page-leaving .fsm-edge-ef {
+body.page-entering .fsm-edge-ef {
   animation:
     fsm-edge-in    350ms cubic-bezier(0.22, 1, 0.36, 1) 195ms forwards,
     fsm-edge-break 560ms ease-in                        650ms  forwards;
+}
+
+/* ─── page-leaving: graceful dissolve within ~1344ms window ─── */
+
+body.page-leaving .fsm-node-a {
+  animation:
+    fsm-node-in  480ms cubic-bezier(0.22, 1, 0.36, 1) 0ms   forwards,
+    fsm-node-out 340ms ease-in                         1010ms forwards;
+}
+
+body.page-leaving .fsm-node-b {
+  animation:
+    fsm-node-in  480ms cubic-bezier(0.22, 1, 0.36, 1) 60ms  forwards,
+    fsm-node-out 340ms ease-in                         940ms  forwards;
+}
+
+body.page-leaving .fsm-node-c {
+  animation:
+    fsm-node-in  460ms cubic-bezier(0.22, 1, 0.36, 1) 140ms forwards,
+    fsm-node-out 340ms ease-in                         860ms  forwards;
+}
+
+body.page-leaving .fsm-node-d {
+  animation:
+    fsm-node-in  480ms cubic-bezier(0.22, 1, 0.36, 1) 80ms  forwards,
+    fsm-node-out 340ms ease-in                         980ms  forwards;
+}
+
+body.page-leaving .fsm-node-e {
+  animation:
+    fsm-node-in  460ms cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards,
+    fsm-node-out 340ms ease-in                         900ms  forwards;
+}
+
+body.page-leaving .fsm-node-f {
+  animation:
+    fsm-node-in  440ms cubic-bezier(0.22, 1, 0.36, 1) 230ms forwards,
+    fsm-node-out 340ms ease-in                         820ms  forwards;
+}
+
+body.page-leaving .fsm-edge-ab {
+  animation:
+    fsm-edge-in  380ms cubic-bezier(0.22, 1, 0.36, 1) 30ms  forwards,
+    fsm-edge-out 320ms ease-in                         960ms  forwards;
+}
+
+body.page-leaving .fsm-edge-ad {
+  animation:
+    fsm-edge-in  380ms cubic-bezier(0.22, 1, 0.36, 1) 45ms  forwards,
+    fsm-edge-out 300ms ease-in                         990ms  forwards;
+}
+
+body.page-leaving .fsm-edge-bc {
+  animation:
+    fsm-edge-in  360ms cubic-bezier(0.22, 1, 0.36, 1) 90ms  forwards,
+    fsm-edge-out 320ms ease-in                         880ms  forwards;
+}
+
+body.page-leaving .fsm-edge-be {
+  animation:
+    fsm-edge-in  360ms cubic-bezier(0.22, 1, 0.36, 1) 105ms forwards,
+    fsm-edge-out 320ms ease-in                         920ms  forwards;
+}
+
+body.page-leaving .fsm-edge-de {
+  animation:
+    fsm-edge-in  360ms cubic-bezier(0.22, 1, 0.36, 1) 120ms forwards,
+    fsm-edge-out 320ms ease-in                         920ms  forwards;
+}
+
+body.page-leaving .fsm-edge-cf {
+  animation:
+    fsm-edge-in  350ms cubic-bezier(0.22, 1, 0.36, 1) 175ms forwards,
+    fsm-edge-out 340ms ease-in                         840ms  forwards;
+}
+
+body.page-leaving .fsm-edge-ef {
+  animation:
+    fsm-edge-in  350ms cubic-bezier(0.22, 1, 0.36, 1) 195ms forwards,
+    fsm-edge-out 340ms ease-in                         840ms  forwards;
 }
 
 .site-header .wrapper {
