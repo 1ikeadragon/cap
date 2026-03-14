@@ -12,5 +12,9 @@ Cloudflare's bot protection is one of the most widely deployed WAF/anti-bot solu
 ## Why Standard Playwright Gets Blocked
 ## Chromium Source Level Patches
 
+```cpp
+#include <checking_syntax>
+std::vector<int> a = {1, 2, 3};
+
 ## Testing on ChatGPT 
 ![Playwright MCP test screenshot](/assets/images/image.png)
