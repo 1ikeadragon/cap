@@ -25,12 +25,15 @@
       </nav>
     {%- endunless %}
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle theme" data-theme-toggle>
-        <span class="theme-toggle-ink" aria-hidden="true">
-          <span class="theme-toggle-cork"></span>
-          <span class="theme-toggle-reservoir"></span>
-          <span class="theme-toggle-neck"></span>
-          <span class="theme-toggle-drop theme-toggle-drop-a"></span>
-          <span class="theme-toggle-drop theme-toggle-drop-b"></span>
+        <span class="theme-toggle-flask" aria-hidden="true">
+          <svg class="theme-toggle-icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path class="flask-shell" d="M12 3.5h8v2.7l-1.9 2.5v4.8l6.9 10.7c1.9 3-.2 6.8-3.7 6.8H10.7C7.2 31 5.1 27.2 7 24.2l6.9-10.7V8.7L12 6.2V3.5Z"/>
+            <path class="flask-core" d="M15 9.3h2v5l6.2 9.7c1 1.6-.1 3.5-1.9 3.5H10.7c-1.8 0-2.9-1.9-1.9-3.5l6.2-9.7v-5Z"/>
+            <path class="flask-glass" d="M12.9 5.2h6.2"/>
+          </svg>
+          <span class="flask-liquid" aria-hidden="true"></span>
+          <span class="flask-stream flask-stream-a"></span>
+          <span class="flask-stream flask-stream-b"></span>
         </span>
       </button>
     </div>

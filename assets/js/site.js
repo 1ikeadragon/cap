@@ -39,7 +39,7 @@
 
     window.setTimeout(() => {
       document.body.classList.remove("theme-transitioning", "is-darkening", "is-lightening");
-    }, 680);
+    }, 820);
   };
 
   const toggleTheme = () => {

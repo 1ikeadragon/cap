@@ -114,12 +114,15 @@ pre,
 img,
 blockquote,
 .theme-toggle,
-.theme-toggle-ink,
-.theme-toggle-cork,
-.theme-toggle-reservoir,
-.theme-toggle-reservoir::after,
-.theme-toggle-neck,
-.theme-toggle-drop,
+.theme-toggle-flask,
+.theme-toggle-icon,
+.flask-shell,
+.flask-core,
+.flask-glass,
+.flask-liquid,
+.flask-stream,
+.theme-splash-drop,
+.theme-splash-ring,
 .footer-link {
   transition:
     background 720ms ease,
@@ -168,6 +171,73 @@ img {
   backdrop-filter: blur(14px);
   background: var(--header-bg);
   border-bottom: 1px solid var(--line);
+}
+
+.theme-splash {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 16;
+}
+
+.theme-splash-drop,
+.theme-splash-ring {
+  position: absolute;
+  opacity: 0;
+}
+
+.theme-splash-drop {
+  right: 7vw;
+  top: 28%;
+  width: 14px;
+  height: 18px;
+  border-radius: 55% 55% 68% 68%;
+  background: var(--accent-strong);
+  filter: drop-shadow(0 8px 16px rgba(18, 18, 15, 0.12));
+}
+
+.theme-splash-drop-a {
+  right: 8vw;
+  top: 30%;
+}
+
+.theme-splash-drop-b {
+  right: 5vw;
+  top: 40%;
+  width: 10px;
+  height: 13px;
+}
+
+.theme-splash-drop-c {
+  right: 10vw;
+  top: 50%;
+  width: 7px;
+  height: 10px;
+}
+
+.theme-splash-ring {
+  right: 6vw;
+  top: 55%;
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border: 1px solid var(--accent-strong);
+  border-radius: 50%;
+}
+
+.theme-splash-ring-a {
+  right: 8.1vw;
+  top: 60%;
+}
+
+.theme-splash-ring-b {
+  right: 5.2vw;
+  top: 67%;
+}
+
+.theme-splash-ring-c {
+  right: 10.1vw;
+  top: 73%;
 }
 
 .page-machine {
@@ -418,14 +488,15 @@ body.page-leaving .machine-edge-e {
 
 .theme-toggle {
   position: relative;
-  width: 54px;
-  height: 54px;
+  width: 38px;
+  height: 38px;
   padding: 0;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.12);
   cursor: pointer;
-  overflow: hidden;
+  display: inline-grid;
+  place-items: center;
 }
 
 html[data-theme="dark"] .theme-toggle {
@@ -441,104 +512,141 @@ html[data-theme="dark"] .theme-toggle {
   transform: translateY(1px) scale(0.98);
 }
 
-.theme-toggle-ink {
+.theme-toggle-flask {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 26px;
+  transform-origin: 50% 18%;
+}
+
+.theme-toggle:hover .theme-toggle-flask,
+.theme-toggle:focus-visible .theme-toggle-flask {
+  transform: rotate(-8deg);
+}
+
+.theme-toggle:active .theme-toggle-flask,
+body.theme-transitioning .theme-toggle-flask {
+  transform: rotate(-16deg);
+}
+
+.theme-toggle-icon {
   position: absolute;
   inset: 0;
-  display: block;
-  transform-origin: 50% 58%;
-}
-
-.theme-toggle:hover .theme-toggle-ink,
-.theme-toggle:focus-visible .theme-toggle-ink {
-  transform: rotate(-10deg);
-}
-
-.theme-toggle:active .theme-toggle-ink,
-body.theme-transitioning .theme-toggle-ink {
-  transform: rotate(-18deg);
-}
-
-.theme-toggle-cork {
-  position: absolute;
-  left: 22px;
-  top: 7px;
-  width: 8px;
-  height: 4px;
-  border-radius: 3px;
-  background: var(--accent-strong);
-}
-
-.theme-toggle-reservoir {
-  position: absolute;
-  left: 16px;
-  top: 15px;
   width: 22px;
-  height: 24px;
-  border: 1px solid var(--accent-strong);
-  border-radius: 8px 8px 14px 14px;
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 8px 18px rgba(18, 18, 15, 0.08);
+  height: 26px;
+  z-index: 2;
 }
 
-.theme-toggle-reservoir::after {
-  content: "";
+.flask-shell {
+  fill: none;
+  stroke: var(--accent-strong);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.flask-core {
+  fill: rgba(255, 255, 255, 0.06);
+}
+
+.flask-glass {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+}
+
+html[data-theme="dark"] .flask-glass {
+  stroke: rgba(236, 229, 216, 0.2);
+}
+
+.flask-liquid {
   position: absolute;
-  inset: auto 2px 2px 2px;
-  height: 58%;
-  border-radius: 6px 6px 10px 10px;
+  left: 3px;
+  bottom: 2px;
+  width: 16px;
+  height: 13px;
   background: linear-gradient(180deg, var(--accent) 0%, var(--accent-strong) 100%);
-  transform-origin: bottom;
-  transform: scaleY(1);
+  clip-path: polygon(18% 0, 82% 0, 100% 58%, 88% 100%, 12% 100%, 0 58%);
+  border-radius: 0 0 8px 8px;
+  z-index: 1;
+  transform-origin: center bottom;
+  box-shadow: 0 0 18px rgba(111, 124, 114, 0.12);
 }
 
-.theme-toggle[aria-pressed="true"] .theme-toggle-reservoir::after {
-  transform: scaleY(0.32);
+.theme-toggle[aria-pressed="true"] .flask-liquid {
+  transform: scaleY(0.28);
 }
 
-.theme-toggle-neck {
+.flask-stream {
   position: absolute;
-  left: 22px;
-  top: 10px;
-  width: 8px;
-  height: 8px;
-  border: 1px solid var(--accent-strong);
-  border-radius: 3px 3px 2px 2px;
-  background: var(--paper-deep);
-}
-
-.theme-toggle-drop {
-  position: absolute;
-  left: 28px;
-  top: 35px;
-  width: 6px;
-  height: 9px;
-  border-radius: 55% 55% 68% 68%;
+  left: 15px;
+  top: 18px;
+  width: 2px;
+  height: 12px;
+  border-radius: 999px;
   background: var(--accent-strong);
   opacity: 0;
-  transform: scale(0.6);
+  transform-origin: top center;
 }
 
-.theme-toggle-drop-b {
-  width: 4px;
-  height: 6px;
+.flask-stream-b {
+  left: 16px;
+  width: 1px;
+  height: 15px;
 }
 
-body.is-darkening .theme-toggle-drop-a {
-  animation: bottle-spill-a 0.6s ease-out forwards;
+body.is-darkening .flask-stream-a {
+  animation: flask-pour-a 0.72s ease-out forwards;
 }
 
-body.is-darkening .theme-toggle-drop-b {
-  animation: bottle-spill-b 0.68s ease-out 40ms forwards;
+body.is-darkening .flask-stream-b {
+  animation: flask-pour-b 0.8s ease-out 40ms forwards;
 }
 
-body.is-lightening .theme-toggle-drop-a {
-  animation: bottle-return-a 0.6s ease-in forwards;
+body.is-lightening .flask-stream-a {
+  animation: flask-return-a 0.72s ease-in forwards;
 }
 
-body.is-lightening .theme-toggle-drop-b {
-  animation: bottle-return-b 0.68s ease-in 40ms forwards;
+body.is-lightening .flask-stream-b {
+  animation: flask-return-b 0.8s ease-in 40ms forwards;
+}
+
+body.is-darkening .theme-splash-drop-a {
+  animation: splash-fall-a 0.82s cubic-bezier(0.18, 0.9, 0.32, 1) forwards;
+}
+
+body.is-darkening .theme-splash-drop-b {
+  animation: splash-fall-b 0.88s cubic-bezier(0.18, 0.9, 0.32, 1) 60ms forwards;
+}
+
+body.is-darkening .theme-splash-drop-c {
+  animation: splash-fall-c 0.94s cubic-bezier(0.18, 0.9, 0.32, 1) 110ms forwards;
+}
+
+body.is-darkening .theme-splash-ring-a {
+  animation: splash-ring 0.62s ease-out 260ms forwards;
+}
+
+body.is-darkening .theme-splash-ring-b {
+  animation: splash-ring 0.62s ease-out 320ms forwards;
+}
+
+body.is-darkening .theme-splash-ring-c {
+  animation: splash-ring 0.62s ease-out 380ms forwards;
+}
+
+body.is-lightening .theme-splash-drop-a {
+  animation: splash-return-a 0.78s ease-in forwards;
+}
+
+body.is-lightening .theme-splash-drop-b {
+  animation: splash-return-b 0.82s ease-in 60ms forwards;
+}
+
+body.is-lightening .theme-splash-drop-c {
+  animation: splash-return-c 0.9s ease-in 110ms forwards;
 }
 
 .page-content {
@@ -714,6 +822,10 @@ blockquote {
   background: var(--footer-bg);
 }
 
+.site-footer .wrapper {
+  width: min(calc(100% - 40px), 64rem);
+}
+
 .footer-shell {
   display: grid;
   align-items: center;
@@ -725,8 +837,10 @@ blockquote {
 .footer-mark {
   min-width: 0;
   font-family: var(--font-serif);
-  font-size: 1.12rem;
-  letter-spacing: -0.01em;
+  font-size: 1.05rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
 }
 
 .footer-socials {
@@ -774,7 +888,6 @@ blockquote {
 
 .grey,
 .site-footer,
-.footer-mark,
 .footer-link {
   color: var(--muted);
 }
@@ -829,10 +942,68 @@ blockquote {
   }
 }
 
-@keyframes bottle-spill-a {
+@keyframes flask-pour-a {
   0% {
     opacity: 0;
-    transform: translate(0, 0) scale(0.5);
+    transform: scaleY(0.2);
+  }
+
+  20% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(10px) scaleY(0.28);
+  }
+}
+
+@keyframes flask-pour-b {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.2);
+  }
+
+  24% {
+    opacity: 0.9;
+    transform: scaleY(1.08);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(14px) scaleY(0.22);
+  }
+}
+
+@keyframes flask-return-a {
+  0% {
+    opacity: 0.9;
+    transform: translateY(12px) scaleY(0.26);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scaleY(0.12);
+  }
+}
+
+@keyframes flask-return-b {
+  0% {
+    opacity: 0.82;
+    transform: translateY(16px) scaleY(0.22);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes splash-fall-a {
+  0% {
+    opacity: 0;
+    transform: translate(0, -18px) scale(0.55);
   }
 
   24% {
@@ -841,47 +1012,91 @@ blockquote {
 
   100% {
     opacity: 0;
-    transform: translate(10px, 17px) scale(1.2);
+    transform: translate(8px, 190px) scale(1.4);
   }
 }
 
-@keyframes bottle-spill-b {
+@keyframes splash-fall-b {
   0% {
     opacity: 0;
-    transform: translate(0, 0) scale(0.45);
+    transform: translate(0, -12px) scale(0.5);
   }
 
-  26% {
+  24% {
     opacity: 1;
   }
 
   100% {
     opacity: 0;
-    transform: translate(14px, 24px) scale(1.05);
+    transform: translate(-6px, 148px) scale(1.15);
   }
 }
 
-@keyframes bottle-return-a {
+@keyframes splash-fall-c {
   0% {
-    opacity: 0.9;
-    transform: translate(10px, 18px) scale(1.1);
+    opacity: 0;
+    transform: translate(0, -10px) scale(0.44);
+  }
+
+  28% {
+    opacity: 1;
   }
 
   100% {
     opacity: 0;
-    transform: translate(0, 0) scale(0.4);
+    transform: translate(12px, 118px) scale(1.02);
   }
 }
 
-@keyframes bottle-return-b {
+@keyframes splash-ring {
   0% {
-    opacity: 0.82;
-    transform: translate(12px, 25px) scale(0.96);
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  28% {
+    opacity: 0.65;
   }
 
   100% {
     opacity: 0;
-    transform: translate(0, 0) scale(0.35);
+    transform: scale(3.2);
+  }
+}
+
+@keyframes splash-return-a {
+  0% {
+    opacity: 0.85;
+    transform: translate(8px, 180px) scale(1.35);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.32);
+  }
+}
+
+@keyframes splash-return-b {
+  0% {
+    opacity: 0.78;
+    transform: translate(-6px, 142px) scale(1.08);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.28);
+  }
+}
+
+@keyframes splash-return-c {
+  0% {
+    opacity: 0.7;
+    transform: translate(12px, 110px) scale(0.96);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.24);
   }
 }
 
