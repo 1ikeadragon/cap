@@ -1,10 +1,13 @@
 (() => {
   const storageKey = "stateless-theme";
-  const pageLeaveDuration = 520;
+  const pageEnterDuration = 1760;
+  const pageLeaveDuration = 1120;
+  const themeTransitionDuration = 1680;
   const root = document.documentElement;
   const toggle = document.querySelector("[data-theme-toggle]");
   const prefersDark = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
   const internalLinks = Array.from(document.querySelectorAll('a[href]'));
+  let pageEnterTimer = null;
 
   const getStoredTheme = () => {
     try {
@@ -40,7 +43,7 @@
 
     window.setTimeout(() => {
       document.body.classList.remove("theme-transitioning", "is-darkening", "is-lightening");
-    }, 820);
+    }, themeTransitionDuration);
   };
 
   const toggleTheme = () => {
@@ -73,9 +76,21 @@
   }
 
   const clearPageEnter = () => {
-    window.setTimeout(() => {
+    if (pageEnterTimer) {
+      window.clearTimeout(pageEnterTimer);
+    }
+
+    pageEnterTimer = window.setTimeout(() => {
       document.body.classList.remove("page-entering");
-    }, 980);
+      pageEnterTimer = null;
+    }, pageEnterDuration);
+  };
+
+  const replayPageEnter = () => {
+    document.body.classList.remove("page-entering", "page-leaving");
+    void document.body.offsetWidth;
+    document.body.classList.add("page-entering");
+    clearPageEnter();
   };
 
   const isNavigableInternalLink = (link) => {
@@ -114,6 +129,11 @@
       }
 
       event.preventDefault();
+      if (pageEnterTimer) {
+        window.clearTimeout(pageEnterTimer);
+        pageEnterTimer = null;
+      }
+
       document.body.classList.remove("page-entering");
       document.body.classList.add("page-leaving");
 
@@ -121,6 +141,14 @@
         window.location.assign(link.href);
       }, pageLeaveDuration);
     });
+  });
+
+  window.addEventListener("pageshow", (event) => {
+    document.body.classList.remove("page-leaving");
+
+    if (event.persisted) {
+      replayPageEnter();
+    }
   });
 
   clearPageEnter();
