@@ -125,6 +125,7 @@ blockquote,
 .flask-shell,
 .flask-core,
 .flask-glass,
+.flask-liquid-wrap,
 .flask-liquid,
 .flask-stream,
 .theme-splash-drop,
@@ -592,6 +593,12 @@ html[data-theme="dark"] .theme-toggle:focus-visible .theme-toggle-flask {
   fill: rgba(255, 255, 255, 0.06);
 }
 
+.flask-liquid-wrap {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  filter: drop-shadow(0 0 6px rgba(111, 124, 114, 0.22));
+}
+
 .flask-glass {
   fill: none;
   stroke: rgba(255, 255, 255, 0.35);
@@ -604,22 +611,11 @@ html[data-theme="dark"] .flask-glass {
 }
 
 .flask-liquid {
-  position: absolute;
-  left: 4px;
-  bottom: 3px;
-  width: 16px;
-  height: 12px;
-  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-strong) 100%);
-  clip-path: polygon(12% 22%, 88% 22%, 96% 52%, 84% 100%, 16% 100%, 4% 52%);
-  border-radius: 0 0 8px 8px;
-  z-index: 1;
-  transform-origin: center bottom;
-  box-shadow: 0 0 16px rgba(111, 124, 114, 0.18);
-  transform: scaleY(0.82);
+  fill: url(#theme-toggle-flask-liquid);
 }
 
-html[data-theme="dark"] .flask-liquid,
-.theme-toggle[aria-pressed="true"] .flask-liquid {
+html[data-theme="dark"] .flask-liquid-wrap,
+.theme-toggle[aria-pressed="true"] .flask-liquid-wrap {
   transform: translate(2px, -1px) skewX(10deg) scaleX(1.12) scaleY(0.28);
 }
 
