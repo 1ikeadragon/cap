@@ -1,13 +1,14 @@
 (() => {
   const storageKey = "stateless-theme";
-  const pageEnterDuration = 1760;
-  const pageLeaveDuration = 1120;
-  const themeTransitionDuration = 1680;
+  const pageEnterDuration = 2112;
+  const pageLeaveDuration = 1344;
+  const themeTransitionDuration = 1500;
   const root = document.documentElement;
   const toggle = document.querySelector("[data-theme-toggle]");
   const prefersDark = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
   const internalLinks = Array.from(document.querySelectorAll('a[href]'));
   let pageEnterTimer = null;
+  let themeDelayTimer = null;
 
   const getStoredTheme = () => {
     try {
@@ -49,8 +50,16 @@
   const toggleTheme = () => {
     const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
     runThemeTransition(nextTheme);
-    setTheme(nextTheme);
-    setStoredTheme(nextTheme);
+
+    if (themeDelayTimer) {
+      window.clearTimeout(themeDelayTimer);
+    }
+
+    themeDelayTimer = window.setTimeout(() => {
+      setTheme(nextTheme);
+      setStoredTheme(nextTheme);
+      themeDelayTimer = null;
+    }, 250);
   };
 
   const syncWithSystem = (event) => {
