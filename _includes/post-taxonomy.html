@@ -1,0 +1,9 @@
+{%- assign taxonomy_terms = include.item.categories | default: empty -%}
+
+{%- if taxonomy_terms != empty -%}
+  <div class="post-taxonomy" aria-label="Post categories">
+    {%- for term in taxonomy_terms -%}
+      <span class="taxonomy-chip">{{ term | replace: "-", " " | upcase }}</span>
+    {%- endfor -%}
+  </div>
+{%- endif -%}

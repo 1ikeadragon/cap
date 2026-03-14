@@ -24,6 +24,7 @@ layout: base
             {{ post.title | escape }}
           </a>
         </h3>
+        {%- include post-taxonomy.html item=post -%}
         {%- if site.minima.show_excerpts -%}
           <div class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</div>
         {%- endif -%}
