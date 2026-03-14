@@ -267,8 +267,9 @@ body.page-leaving .page-machine {
     radial-gradient(circle at 20% 12%, rgba(111, 124, 114, 0.18), transparent 40%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent 28%),
     var(--paper);
-  transform: translate3d(0, -104%, 0);
-  will-change: transform;
+  -webkit-clip-path: inset(0 0 100% 0);
+  clip-path: inset(0 0 100% 0);
+  will-change: clip-path;
 }
 
 html[data-theme="dark"] .page-mask {
@@ -1399,22 +1400,26 @@ blockquote {
 
 @keyframes page-mask-enter {
   0%,
-  66% {
-    transform: translate3d(0, 0, 0);
+  64.4% {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
   }
 
   100% {
-    transform: translate3d(0, -104%, 0);
+    -webkit-clip-path: inset(100% 0 0 0);
+    clip-path: inset(100% 0 0 0);
   }
 }
 
 @keyframes page-mask-leave {
   0% {
-    transform: translate3d(0, -104%, 0);
+    -webkit-clip-path: inset(0 0 100% 0);
+    clip-path: inset(0 0 100% 0);
   }
 
   100% {
-    transform: translate3d(0, 0, 0);
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
   }
 }
 

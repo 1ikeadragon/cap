@@ -15,6 +15,6 @@ Cloudflare's bot protection is one of the most widely deployed WAF/anti-bot solu
 ```cpp
 #include <checking_syntax>
 std::vector<int> a = {1, 2, 3};
-
+```
 ## Testing on ChatGPT 
 ![Playwright MCP test screenshot](/assets/images/image.png)
