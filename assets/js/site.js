@@ -1,6 +1,6 @@
 (() => {
   const storageKey = "stateless-theme";
-  const pageEnterDuration = 2112;
+  const pageEnterDuration = 2900;
   const pageLeaveDuration = 1344;
   const themeTransitionDuration = 1500;
   const root = document.documentElement;
