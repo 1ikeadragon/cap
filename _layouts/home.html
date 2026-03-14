@@ -3,16 +3,6 @@ layout: base
 ---
 
 <div class="home">
-  <section class="home-intro">
-    <span class="home-kicker">Field Notes / Systems / Research</span>
-    <h1 class="home-title">{{ site.title }}</h1>
-    <p class="home-dek">{{ site.description }}</p>
-    <div class="home-copy">
-      {{ content }}
-    </div>
-  </section>
-
-
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
