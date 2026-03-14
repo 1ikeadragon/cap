@@ -138,6 +138,8 @@ blockquote,
 .theme-splash-shadow,
 .theme-splash-gloss,
 .theme-splash-speck,
+.machine-nn-node,
+.machine-nn-edge,
 .footer-link {
   transition:
     background 720ms ease,
@@ -262,70 +264,38 @@ html[data-theme="dark"] .page-mask {
   background: var(--paper);
 }
 
-.machine-node,
-.machine-edge {
+.machine-svg {
   position: absolute;
-  display: block;
-  background: var(--accent-strong);
-  opacity: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
   z-index: 1;
 }
 
-.machine-node {
-  width: 18px;
-  height: 18px;
-  margin: -9px 0 0 -9px;
-  border: 1.5px solid var(--accent-strong);
-  border-radius: 50%;
-  background: var(--paper);
-  box-shadow: 0 0 0 0 rgba(111, 124, 114, 0);
+.machine-nn-node {
+  fill: var(--paper);
+  stroke: var(--accent-strong);
+  stroke-width: 2;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center center;
 }
 
-.machine-edge {
-  height: 3px;
-  transform-origin: left center;
-  background: linear-gradient(90deg, transparent 0, var(--accent-strong) 18%, var(--accent-strong) 82%, transparent 100%);
+.machine-nn-edge {
+  stroke: var(--accent-strong);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  opacity: 0;
+  fill: none;
 }
 
-.machine-node-a { top: calc(50% - 128px); left: calc(50% - 218px); }
-.machine-node-b { top: calc(50% - 186px); left: calc(50% - 58px); }
-.machine-node-c { top: calc(50% - 92px); left: calc(50% + 126px); }
-.machine-node-d { top: calc(50% + 90px); left: calc(50% + 82px); }
-.machine-node-e { top: calc(50% + 92px); left: calc(50% - 122px); }
-
-.machine-edge-a {
-  top: calc(50% - 128px);
-  left: calc(50% - 218px);
-  width: 172px;
-  transform: rotate(-20deg);
-}
-
-.machine-edge-b {
-  top: calc(50% - 186px);
-  left: calc(50% - 58px);
-  width: 206px;
-  transform: rotate(29deg);
-}
-
-.machine-edge-c {
-  top: calc(50% - 92px);
-  left: calc(50% + 126px);
-  width: 186px;
-  transform: rotate(102deg);
-}
-
-.machine-edge-d {
-  top: calc(50% + 90px);
-  left: calc(50% + 82px);
-  width: 204px;
-  transform: rotate(180deg);
-}
-
-.machine-edge-e {
-  top: calc(50% + 92px);
-  left: calc(50% - 122px);
-  width: 242px;
-  transform: rotate(-114deg);
+.machine-nn-edge-7,
+.machine-nn-edge-8,
+.machine-nn-edge-9 {
+  stroke-width: 2;
 }
 
 body.page-entering .page-machine,
@@ -342,61 +312,134 @@ body.page-leaving .page-mask {
   animation: page-mask-leave 1300ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-body.page-entering .machine-node,
-body.page-entering .machine-edge,
-body.page-leaving .machine-node,
-body.page-leaving .machine-edge {
-  opacity: 1;
+body.page-entering .machine-nn-node-1,
+body.page-leaving .machine-nn-node-1 {
+  animation: nn-node-pop 1780ms cubic-bezier(0.22, 1, 0.36, 1) 0ms forwards;
 }
 
-body.page-entering .machine-node-a,
-body.page-leaving .machine-node-a {
-  animation: node-flicker-a 1780ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+body.page-entering .machine-nn-node-2,
+body.page-leaving .machine-nn-node-2 {
+  animation: nn-node-pop 1780ms cubic-bezier(0.22, 1, 0.36, 1) 65ms forwards;
 }
 
-body.page-entering .machine-node-b,
-body.page-leaving .machine-node-b {
-  animation: node-flicker-b 1780ms cubic-bezier(0.22, 1, 0.36, 1) 108ms forwards;
+body.page-entering .machine-nn-node-3,
+body.page-leaving .machine-nn-node-3 {
+  animation: nn-node-pop 1780ms cubic-bezier(0.22, 1, 0.36, 1) 140ms forwards;
 }
 
-body.page-entering .machine-node-c,
-body.page-leaving .machine-node-c {
-  animation: node-flicker-c 1780ms cubic-bezier(0.22, 1, 0.36, 1) 216ms forwards;
+body.page-entering .machine-nn-node-4,
+body.page-leaving .machine-nn-node-4 {
+  animation: nn-node-break 1780ms linear 175ms forwards;
 }
 
-body.page-entering .machine-node-d,
-body.page-leaving .machine-node-d {
-  animation: node-flicker-d 1780ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
+body.page-entering .machine-nn-node-5,
+body.page-leaving .machine-nn-node-5 {
+  animation: nn-node-pop 1780ms cubic-bezier(0.22, 1, 0.36, 1) 210ms forwards;
 }
 
-body.page-entering .machine-node-e,
-body.page-leaving .machine-node-e {
-  animation: node-flicker-e 1780ms cubic-bezier(0.22, 1, 0.36, 1) 396ms forwards;
+body.page-entering .machine-nn-node-6,
+body.page-leaving .machine-nn-node-6 {
+  animation: nn-node-pop 1780ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
 }
 
-body.page-entering .machine-edge-a,
-body.page-leaving .machine-edge-a {
-  animation: edge-draw-a 1780ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+body.page-entering .machine-nn-node-7,
+body.page-leaving .machine-nn-node-7 {
+  animation: nn-node-wander 1780ms linear 330ms forwards;
 }
 
-body.page-entering .machine-edge-b,
-body.page-leaving .machine-edge-b {
-  animation: edge-draw-b 1780ms cubic-bezier(0.22, 1, 0.36, 1) 108ms forwards;
+body.page-entering .machine-nn-node-8,
+body.page-leaving .machine-nn-node-8 {
+  animation: nn-node-pop 1780ms cubic-bezier(0.22, 1, 0.36, 1) 365ms forwards;
 }
 
-body.page-entering .machine-edge-c,
-body.page-leaving .machine-edge-c {
-  animation: edge-draw-c 1780ms cubic-bezier(0.22, 1, 0.36, 1) 216ms forwards;
+body.page-entering .machine-nn-node-9,
+body.page-leaving .machine-nn-node-9 {
+  animation: nn-node-pop 1780ms cubic-bezier(0.22, 1, 0.36, 1) 450ms forwards;
 }
 
-body.page-entering .machine-edge-d,
-body.page-leaving .machine-edge-d {
-  animation: edge-draw-d 1780ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
+body.page-entering .machine-nn-node-10,
+body.page-leaving .machine-nn-node-10 {
+  animation: nn-node-pop 1780ms cubic-bezier(0.22, 1, 0.36, 1) 480ms forwards;
 }
 
-body.page-entering .machine-edge-e,
-body.page-leaving .machine-edge-e {
-  animation: edge-draw-e 1780ms cubic-bezier(0.22, 1, 0.36, 1) 396ms forwards;
+body.page-entering .machine-nn-edge-1,
+body.page-leaving .machine-nn-edge-1 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 30ms forwards;
+}
+
+body.page-entering .machine-nn-edge-2,
+body.page-leaving .machine-nn-edge-2 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 50ms forwards;
+}
+
+body.page-entering .machine-nn-edge-3,
+body.page-leaving .machine-nn-edge-3 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 75ms forwards;
+}
+
+body.page-entering .machine-nn-edge-4,
+body.page-leaving .machine-nn-edge-4 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 95ms forwards;
+}
+
+body.page-entering .machine-nn-edge-5,
+body.page-leaving .machine-nn-edge-5 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 170ms forwards;
+}
+
+body.page-entering .machine-nn-edge-6,
+body.page-leaving .machine-nn-edge-6 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 190ms forwards;
+}
+
+body.page-entering .machine-nn-edge-7,
+body.page-leaving .machine-nn-edge-7 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 205ms forwards;
+}
+
+body.page-entering .machine-nn-edge-8,
+body.page-leaving .machine-nn-edge-8 {
+  animation: nn-edge-glitch 1780ms linear 220ms forwards;
+}
+
+body.page-entering .machine-nn-edge-9,
+body.page-leaving .machine-nn-edge-9 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards;
+}
+
+body.page-entering .machine-nn-edge-10,
+body.page-leaving .machine-nn-edge-10 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 250ms forwards;
+}
+
+body.page-entering .machine-nn-edge-11,
+body.page-leaving .machine-nn-edge-11 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 265ms forwards;
+}
+
+body.page-entering .machine-nn-edge-12,
+body.page-leaving .machine-nn-edge-12 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 330ms forwards;
+}
+
+body.page-entering .machine-nn-edge-13,
+body.page-leaving .machine-nn-edge-13 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 350ms forwards;
+}
+
+body.page-entering .machine-nn-edge-14,
+body.page-leaving .machine-nn-edge-14 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 360ms forwards;
+}
+
+body.page-entering .machine-nn-edge-15,
+body.page-leaving .machine-nn-edge-15 {
+  animation: nn-edge-ghost 1780ms linear 375ms forwards;
+}
+
+body.page-entering .machine-nn-edge-16,
+body.page-leaving .machine-nn-edge-16 {
+  animation: nn-edge-draw 1780ms cubic-bezier(0.22, 1, 0.36, 1) 395ms forwards;
 }
 
 .site-header .wrapper {
@@ -1344,16 +1387,23 @@ blockquote {
   }
 }
 
-@keyframes node-flicker-a {
+@keyframes nn-node-pop {
   0% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: scale(0.2);
   }
 
-  28% {
+  22% {
     opacity: 1;
+    transform: scale(1.2);
+  }
+
+  35% {
     transform: scale(1);
-    box-shadow: 0 0 0 8px rgba(111, 124, 114, 0);
+  }
+
+  68% {
+    opacity: 1;
   }
 
   100% {
@@ -1362,156 +1412,230 @@ blockquote {
   }
 }
 
-@keyframes node-flicker-b {
+@keyframes nn-node-break {
   0% {
     opacity: 0;
-    transform: translateY(6px) scale(0.55);
+    transform: scale(0.2);
+    filter: none;
   }
 
-  34% {
+  22% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: scale(1.2);
   }
 
-  100% {
-    opacity: 0;
-    transform: translateY(-4px) scale(0.88);
-  }
-}
-
-@keyframes node-flicker-c {
-  0% {
-    opacity: 0;
-    transform: scale(0.45);
-  }
-
-  32% {
-    opacity: 1;
+  35% {
     transform: scale(1);
+    filter: none;
+  }
+
+  48% {
+    transform: scale(1);
+    opacity: 1;
+    filter: none;
+  }
+
+  51% {
+    transform: scale(1.9) translate(5px, -4px);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px var(--accent-strong));
+  }
+
+  54% {
+    transform: scale(0.5) translate(-12px, 9px);
+    opacity: 0.15;
+    filter: none;
+  }
+
+  57% {
+    transform: scale(1.7) translate(7px, -7px);
+    opacity: 1;
+    filter: drop-shadow(0 0 14px var(--accent-strong));
+  }
+
+  61% {
+    transform: scale(0.4) translate(-5px, 14px);
+    opacity: 0.08;
+    filter: none;
+  }
+
+  65% {
+    transform: scale(1.3) translate(3px, -3px);
+    opacity: 0.75;
+    filter: drop-shadow(0 0 6px var(--accent-strong));
+  }
+
+  71% {
+    transform: scale(1);
+    opacity: 0.5;
+    filter: none;
+  }
+
+  82% {
+    opacity: 0.2;
   }
 
   100% {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.7);
+    filter: none;
   }
 }
 
-@keyframes node-flicker-d {
+@keyframes nn-node-wander {
   0% {
     opacity: 0;
-    transform: translateY(8px) scale(0.48);
+    transform: scale(0.2) translate(0, 0);
   }
 
-  34% {
+  22% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: scale(1) translate(0, 0);
+  }
+
+  40% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+
+  55% {
+    transform: scale(0.95) translate(0, 0);
+    opacity: 1;
+  }
+
+  64% {
+    transform: scale(1.05) translate(18px, -14px);
+    opacity: 0.85;
+  }
+
+  73% {
+    transform: scale(0.75) translate(52px, -44px);
+    opacity: 0.55;
+  }
+
+  82% {
+    transform: scale(0.45) translate(90px, -76px);
+    opacity: 0.2;
   }
 
   100% {
     opacity: 0;
-    transform: translateY(-6px) scale(0.84);
+    transform: scale(0.1) translate(128px, -104px);
   }
 }
 
-@keyframes node-flicker-e {
+@keyframes nn-edge-draw {
   0% {
     opacity: 0;
-    transform: translateX(-8px) scale(0.55);
+    stroke-dashoffset: 500;
   }
 
-  36% {
+  18% {
+    opacity: 0.75;
+  }
+
+  44% {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    stroke-dashoffset: 0;
+  }
+
+  68% {
+    opacity: 1;
+    stroke-dashoffset: -20;
   }
 
   100% {
     opacity: 0;
-    transform: translateX(8px) scale(0.82);
+    stroke-dashoffset: -80;
   }
 }
 
-@keyframes edge-draw-a {
+@keyframes nn-edge-glitch {
   0% {
     opacity: 0;
-    transform: rotate(-20deg) scaleX(0.1);
+    stroke-dashoffset: 500;
   }
 
-  34% {
+  18% {
+    opacity: 0.75;
+  }
+
+  40% {
     opacity: 1;
-    transform: rotate(-20deg) scaleX(1);
+    stroke-dashoffset: 0;
+  }
+
+  47% {
+    opacity: 1;
+  }
+
+  49% {
+    opacity: 0;
+  }
+
+  51% {
+    opacity: 1;
+    stroke-dashoffset: -8;
+  }
+
+  53% {
+    opacity: 0;
+  }
+
+  55% {
+    opacity: 0.85;
+  }
+
+  57% {
+    opacity: 0;
+  }
+
+  61% {
+    opacity: 0.5;
+  }
+
+  66% {
+    opacity: 0.15;
   }
 
   100% {
     opacity: 0;
-    transform: rotate(-20deg) scaleX(0.9);
+    stroke-dashoffset: -60;
   }
 }
 
-@keyframes edge-draw-b {
+@keyframes nn-edge-ghost {
   0% {
     opacity: 0;
-    transform: rotate(29deg) scaleX(0.08);
+    stroke-dashoffset: 500;
   }
 
-  36% {
-    opacity: 1;
-    transform: rotate(29deg) scaleX(1);
+  22% {
+    opacity: 0.6;
+  }
+
+  44% {
+    opacity: 0.8;
+    stroke-dashoffset: 0;
+  }
+
+  56% {
+    opacity: 0.55;
+    stroke-dashoffset: -12;
+  }
+
+  68% {
+    opacity: 0.12;
+    stroke-dashoffset: -50;
+  }
+
+  82% {
+    opacity: 0.04;
   }
 
   100% {
     opacity: 0;
-    transform: rotate(29deg) scaleX(0.88);
-  }
-}
-
-@keyframes edge-draw-c {
-  0% {
-    opacity: 0;
-    transform: rotate(102deg) scaleX(0.1);
-  }
-
-  36% {
-    opacity: 1;
-    transform: rotate(102deg) scaleX(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: rotate(102deg) scaleX(0.85);
-  }
-}
-
-@keyframes edge-draw-d {
-  0% {
-    opacity: 0;
-    transform: rotate(180deg) scaleX(0.08);
-  }
-
-  34% {
-    opacity: 1;
-    transform: rotate(180deg) scaleX(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: rotate(180deg) scaleX(0.84);
-  }
-}
-
-@keyframes edge-draw-e {
-  0% {
-    opacity: 0;
-    transform: rotate(-114deg) scaleX(0.08);
-  }
-
-  38% {
-    opacity: 1;
-    transform: rotate(-114deg) scaleX(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: rotate(-114deg) scaleX(0.86);
+    stroke-dashoffset: -120;
   }
 }
 
@@ -1550,42 +1674,6 @@ blockquote {
     right: 4vw;
     top: 56%;
     width: 154px;
-  }
-
-  .machine-node-a { top: calc(50% - 112px); left: calc(50% - 144px); }
-  .machine-node-b { top: calc(50% - 162px); left: calc(50% - 18px); }
-  .machine-node-c { top: calc(50% - 82px); left: calc(50% + 116px); }
-  .machine-node-d { top: calc(50% + 68px); left: calc(50% + 54px); }
-  .machine-node-e { top: calc(50% + 74px); left: calc(50% - 88px); }
-
-  .machine-edge-a {
-    top: calc(50% - 112px);
-    left: calc(50% - 144px);
-    width: 136px;
-  }
-
-  .machine-edge-b {
-    top: calc(50% - 162px);
-    left: calc(50% - 18px);
-    width: 156px;
-  }
-
-  .machine-edge-c {
-    top: calc(50% - 82px);
-    left: calc(50% + 116px);
-    width: 164px;
-  }
-
-  .machine-edge-d {
-    top: calc(50% + 68px);
-    left: calc(50% + 54px);
-    width: 146px;
-  }
-
-  .machine-edge-e {
-    top: calc(50% + 74px);
-    left: calc(50% - 88px);
-    width: 196px;
   }
 
   .site-header .wrapper,
