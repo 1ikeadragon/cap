@@ -3,10 +3,8 @@
 <footer class="site-footer h-card">
   <data class="u-url" value="{{ '/' | relative_url }}"></data>
 
-  <div class="wrapper">
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col">
+  <div class="wrapper footer-shell">
+    <div class="footer-col footer-identity">
       {%- if site.author %}
         <ul class="contact-list">
           {% if site.author.name -%}
@@ -17,13 +15,14 @@
           {%- endif %}
         </ul>
       {%- endif %}
-      </div>
     </div>
 
-    <div class="social-links">
+    <div class="footer-col footer-tagline">
+      <p>{{ site.description | escape }}</p>
+    </div>
+
+    <div class="social-links footer-social">
       {%- include social.html -%}
     </div>
-
   </div>
-
 </footer>
