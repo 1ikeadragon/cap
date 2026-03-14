@@ -38,7 +38,7 @@
 
     window.setTimeout(() => {
       document.body.classList.remove("theme-transitioning", "is-darkening", "is-lightening");
-    }, 1450);
+    }, 680);
   };
 
   const toggleTheme = () => {
@@ -70,20 +70,4 @@
     }
   }
 
-  const startReadyAnimation = () => {
-    root.classList.remove("theme-booting");
-    document.body.classList.add("site-ready");
-  };
-
-  if (document.readyState === "complete") {
-    window.setTimeout(startReadyAnimation, 120);
-  } else {
-    window.addEventListener(
-      "load",
-      () => {
-        window.setTimeout(startReadyAnimation, 120);
-      },
-      { once: true }
-    );
-  }
 })();
