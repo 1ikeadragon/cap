@@ -59,7 +59,7 @@
       setTheme(nextTheme);
       setStoredTheme(nextTheme);
       themeDelayTimer = null;
-    }, 250);
+    }, 420);
   };
 
   const syncWithSystem = (event) => {
