@@ -1,0 +1,89 @@
+(() => {
+  const storageKey = "stateless-theme";
+  const root = document.documentElement;
+  const toggle = document.querySelector("[data-theme-toggle]");
+  const prefersDark = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+  const getStoredTheme = () => {
+    try {
+      return localStorage.getItem(storageKey);
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const setStoredTheme = (theme) => {
+    try {
+      localStorage.setItem(storageKey, theme);
+    } catch (error) {
+      // Ignore storage failures.
+    }
+  };
+
+  const setTheme = (theme) => {
+    root.setAttribute("data-theme", theme);
+
+    if (toggle) {
+      const isDark = theme === "dark";
+      toggle.setAttribute("aria-pressed", String(isDark));
+      toggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+    }
+  };
+
+  const runThemeTransition = (nextTheme) => {
+    const directionClass = nextTheme === "dark" ? "is-darkening" : "is-lightening";
+    document.body.classList.remove("is-darkening", "is-lightening");
+    void document.body.offsetWidth;
+    document.body.classList.add("theme-transitioning", directionClass);
+
+    window.setTimeout(() => {
+      document.body.classList.remove("theme-transitioning", "is-darkening", "is-lightening");
+    }, 1450);
+  };
+
+  const toggleTheme = () => {
+    const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    runThemeTransition(nextTheme);
+    setTheme(nextTheme);
+    setStoredTheme(nextTheme);
+  };
+
+  const syncWithSystem = (event) => {
+    if (getStoredTheme()) {
+      return;
+    }
+
+    setTheme(event.matches ? "dark" : "light");
+  };
+
+  setTheme(root.getAttribute("data-theme") || "light");
+
+  if (toggle) {
+    toggle.addEventListener("click", toggleTheme);
+  }
+
+  if (prefersDark) {
+    if (typeof prefersDark.addEventListener === "function") {
+      prefersDark.addEventListener("change", syncWithSystem);
+    } else if (typeof prefersDark.addListener === "function") {
+      prefersDark.addListener(syncWithSystem);
+    }
+  }
+
+  const startReadyAnimation = () => {
+    root.classList.remove("theme-booting");
+    document.body.classList.add("site-ready");
+  };
+
+  if (document.readyState === "complete") {
+    window.setTimeout(startReadyAnimation, 120);
+  } else {
+    window.addEventListener(
+      "load",
+      () => {
+        window.setTimeout(startReadyAnimation, 120);
+      },
+      { once: true }
+    );
+  }
+})();

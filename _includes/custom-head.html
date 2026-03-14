@@ -1,6 +1,19 @@
-{% comment %}
-  Placeholder to allow defining custom head, in principle, you can add anything here, e.g. favicons:
+<script>
+  (function () {
+    var storageKey = "stateless-theme";
+    var root = document.documentElement;
+    var stored = null;
 
-  1. Head over to https://realfavicongenerator.net/ to add your own favicons.
-  2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
-{% endcomment %}
+    try {
+      stored = localStorage.getItem(storageKey);
+    } catch (error) {
+      stored = null;
+    }
+
+    var systemPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var theme = stored || (systemPrefersDark ? "dark" : "light");
+
+    root.setAttribute("data-theme", theme);
+    root.classList.add("theme-booting");
+  })();
+</script>
