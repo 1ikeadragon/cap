@@ -153,7 +153,7 @@
   });
 
   window.addEventListener("pageshow", (event) => {
-    document.body.classList.remove("page-leaving");
+    document.body.classList.remove("page-leaving", "page-entering");
 
     if (event.persisted) {
       replayPageEnter();

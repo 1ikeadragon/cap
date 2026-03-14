@@ -47,8 +47,6 @@
             <path class="fsm-marker" d="M 0 0.5 L 5.5 3.5 L 0 6.5 Z"/>
           </marker>
         </defs>
-        <!-- entry arrow into initial state A -->
-        <line class="fsm-entry" x1="62" y1="252" x2="92" y2="252" marker-end="url(#fsm-arrow)"/>
         <!-- edges (beneath nodes) — endpoints trimmed to node circumference -->
         <line class="fsm-edge fsm-edge-ab" x1="125" y1="243" x2="271" y2="154" marker-end="url(#fsm-arrow)"/>
         <line class="fsm-edge fsm-edge-ad" x1="125" y1="261" x2="287" y2="361" marker-end="url(#fsm-arrow)"/>
@@ -63,9 +61,7 @@
         <circle class="fsm-node fsm-node-c" cx="478" cy="82"  r="16"/>
         <circle class="fsm-node fsm-node-d" cx="305" cy="372" r="15"/>
         <circle class="fsm-node fsm-node-e" cx="512" cy="298" r="17"/>
-        <!-- F: accepting state — outer ring + inner circle -->
-        <circle class="fsm-node fsm-accept-ring fsm-node-f" cx="688" cy="202" r="23"/>
-        <circle class="fsm-node fsm-node-f"               cx="688" cy="202" r="18"/>
+        <circle class="fsm-node fsm-node-f" cx="688" cy="202" r="18"/>
       </svg>
     </div>
     {%- include header.html -%}
