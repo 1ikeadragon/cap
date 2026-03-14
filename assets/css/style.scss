@@ -64,6 +64,12 @@ body {
   position: relative;
 }
 
+.site-shell {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
 html[data-theme="dark"] body {
   background:
     radial-gradient(circle at top left, rgba(216, 193, 137, 0.08), transparent 24%),
@@ -246,6 +252,19 @@ img {
   pointer-events: none;
   z-index: 20;
   opacity: 0;
+  visibility: hidden;
+}
+
+.page-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 20% 12%, rgba(111, 124, 114, 0.18), transparent 40%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent 28%),
+    var(--paper);
+  transform: translate3d(0, -104%, 0);
+  will-change: transform;
 }
 
 .machine-node,
@@ -254,6 +273,7 @@ img {
   display: block;
   background: var(--accent-strong);
   opacity: 0;
+  z-index: 1;
 }
 
 .machine-node {
@@ -316,6 +336,15 @@ img {
 body.page-entering .page-machine,
 body.page-leaving .page-machine {
   opacity: 1;
+  visibility: visible;
+}
+
+body.page-entering .page-mask {
+  animation: page-mask-enter 980ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+body.page-leaving .page-mask {
+  animation: page-mask-leave 460ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 body.page-entering .machine-node,
@@ -650,7 +679,8 @@ body.is-lightening .theme-splash-drop-c {
 }
 
 .page-content {
-  padding: 56px 0 0;
+  flex: 1 0 auto;
+  padding: 56px 0 84px;
 }
 
 .post-meta {
@@ -817,7 +847,7 @@ blockquote {
 }
 
 .site-footer {
-  margin-top: 84px;
+  margin-top: auto;
   border-top: 1px solid var(--line);
   background: var(--footer-bg);
 }
@@ -1100,6 +1130,27 @@ blockquote {
   }
 }
 
+@keyframes page-mask-enter {
+  0%,
+  58% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, -104%, 0);
+  }
+}
+
+@keyframes page-mask-leave {
+  0% {
+    transform: translate3d(0, -104%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 @keyframes node-flicker-a {
   0% {
     opacity: 0;
@@ -1332,10 +1383,7 @@ blockquote {
 
   .page-content {
     padding-top: 40px;
-  }
-
-  .site-footer {
-    margin-top: 60px;
+    padding-bottom: 60px;
   }
 
   .footer-shell {

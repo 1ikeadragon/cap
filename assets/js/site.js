@@ -1,5 +1,6 @@
 (() => {
   const storageKey = "stateless-theme";
+  const pageLeaveDuration = 520;
   const root = document.documentElement;
   const toggle = document.querySelector("[data-theme-toggle]");
   const prefersDark = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
@@ -113,11 +114,12 @@
       }
 
       event.preventDefault();
+      document.body.classList.remove("page-entering");
       document.body.classList.add("page-leaving");
 
       window.setTimeout(() => {
         window.location.assign(link.href);
-      }, 420);
+      }, pageLeaveDuration);
     });
   });
 
