@@ -1,4 +1,4 @@
-title: Stateless Machine
+title: stateless.computer
 description: scratch the itch
 baseurl: ""
 url: "https://stateless.computer"
@@ -19,6 +19,8 @@ plugins:
 minima:
   skin: auto
   show_excerpts: true
+  nav_pages:
+    - about.md
   social_links:
     - title: Github
       icon: github

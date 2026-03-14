@@ -3,11 +3,14 @@ layout: base
 ---
 
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
-  {{ content }}
+  <section class="home-intro">
+    <span class="home-kicker">Field Notes / Systems / Research</span>
+    <h1 class="home-title">{{ site.title }}</h1>
+    <p class="home-dek">{{ site.description }}</p>
+    <div class="home-copy">
+      {{ content }}
+    </div>
+  </section>
 
 
   {% if site.paginate %}
@@ -32,7 +35,7 @@ layout: base
           </a>
         </h3>
         {%- if site.minima.show_excerpts -%}
-          {{ post.excerpt }}
+          <div class="post-excerpt">{{ post.excerpt }}</div>
         {%- endif -%}
       </li>
       {%- endfor -%}

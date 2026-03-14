@@ -4,4 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the About page for your site.
+`stateless.computer` is a personal blog about systems work, offensive tooling, browser automation, and computational oddities.
+
+The site is meant to read like archived lab notes: elegant, plainspoken, and a little severe.
