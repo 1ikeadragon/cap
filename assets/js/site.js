@@ -71,8 +71,7 @@
     }
   }
 
-  const runPageEnter = () => {
-    document.body.classList.add("page-entering");
+  const clearPageEnter = () => {
     window.setTimeout(() => {
       document.body.classList.remove("page-entering");
     }, 980);
@@ -122,6 +121,6 @@
     });
   });
 
-  runPageEnter();
+  clearPageEnter();
 
 })();

@@ -633,14 +633,15 @@ body.is-lightening .theme-toggle-drop-b {
 .post-content p,
 .post-content li,
 .post-content blockquote {
+  font-family: var(--font-serif);
   font-size: 1.08rem;
 }
 
 .post-content h2,
 .post-content h3,
 .post-content h4 {
-  font-family: var(--font-sans);
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-weight: 500;
   letter-spacing: -0.02em;
   margin-top: 2.5em;
   margin-bottom: 0.7em;
@@ -714,26 +715,25 @@ blockquote {
 }
 
 .footer-shell {
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 24px;
   padding: 24px 0 28px;
 }
 
-.footer-email {
+.footer-mark {
   min-width: 0;
   font-family: var(--font-serif);
   font-size: 1.12rem;
   letter-spacing: -0.01em;
-  text-decoration: none;
 }
 
 .footer-socials {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  justify-self: end;
 }
 
 .footer-link {
@@ -774,7 +774,7 @@ blockquote {
 
 .grey,
 .site-footer,
-.footer-email,
+.footer-mark,
 .footer-link {
   color: var(--muted);
 }
@@ -1124,6 +1124,7 @@ blockquote {
   }
 
   .footer-shell {
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 14px;
   }
 }

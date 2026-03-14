@@ -2,9 +2,7 @@
   <data class="u-url" value="{{ '/' | relative_url }}"></data>
 
   <div class="wrapper footer-shell">
-    {%- if site.author and site.author.email -%}
-      <a class="footer-email u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
-    {%- endif -%}
+    <span class="footer-mark">{{ site.description | escape }}</span>
 
     <div class="footer-socials">
       {%- for entry in site.minima.social_links -%}
