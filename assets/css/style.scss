@@ -124,15 +124,12 @@ blockquote,
 .theme-toggle,
 .theme-toggle-flask,
 .theme-toggle-icon,
-.flask-effects,
 .flask-shell,
 .flask-core,
 .flask-glass,
 .flask-liquid-wrap,
 .flask-liquid,
-.flask-stream,
-.flask-drop,
-.flask-bubble,
+.flask-liquid-sheen,
 .theme-splash-blot,
 .theme-splash-body,
 .theme-splash-shadow,
@@ -204,19 +201,19 @@ img {
   overflow: visible;
   opacity: 0;
   transform-origin: center center;
-  filter: drop-shadow(0 18px 28px rgba(18, 18, 15, 0.2));
+  filter: drop-shadow(0 12px 18px rgba(18, 18, 15, 0.12));
 }
 
 .theme-splash-blot-a {
-  right: -2vw;
-  top: 14%;
-  width: clamp(220px, 26vw, 360px);
+  right: 2vw;
+  top: 18%;
+  width: clamp(170px, 20vw, 260px);
 }
 
 .theme-splash-blot-b {
-  right: 2vw;
-  top: 50%;
-  width: clamp(170px, 18vw, 260px);
+  right: 8vw;
+  top: 56%;
+  width: clamp(130px, 14vw, 190px);
 }
 
 .theme-splash-blot-a .theme-splash-body {
@@ -228,15 +225,15 @@ img {
 }
 
 .theme-splash-shadow {
-  fill: rgba(18, 18, 15, 0.22);
+  fill: rgba(18, 18, 15, 0.14);
 }
 
 .theme-splash-gloss {
-  fill: rgba(255, 255, 255, 0.18);
+  fill: rgba(255, 255, 255, 0.12);
 }
 
 .theme-splash-speck {
-  fill: rgba(255, 255, 255, 0.16);
+  fill: rgba(255, 255, 255, 0.1);
 }
 
 .page-machine {
@@ -587,19 +584,21 @@ body.page-leaving .fsm-edge-ef {
 .theme-toggle {
   position: relative;
   overflow: visible;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   padding: 0;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
   cursor: pointer;
   display: inline-grid;
   place-items: center;
 }
 
 html[data-theme="dark"] .theme-toggle {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .theme-toggle:hover {
@@ -614,71 +613,58 @@ html[data-theme="dark"] .theme-toggle {
 .theme-toggle-flask {
   position: relative;
   display: block;
-  width: 26px;
-  height: 30px;
-  transform-origin: 52% 20%;
-  transition: transform 520ms cubic-bezier(0.2, 0.88, 0.32, 1);
+  width: 20px;
+  height: 24px;
+  transform-origin: 52% 18%;
+  transition: transform 280ms cubic-bezier(0.2, 0.88, 0.32, 1);
 }
 
 .theme-toggle:hover .theme-toggle-flask,
 .theme-toggle:focus-visible .theme-toggle-flask {
-  transform: rotate(8deg);
+  transform: rotate(4deg) translateY(-0.5px);
 }
 
 .theme-toggle:active .theme-toggle-flask {
-  transform: rotate(14deg) scale(0.97);
+  transform: rotate(8deg) scale(0.98);
 }
 
 body.is-darkening .theme-toggle-flask {
-  animation: flask-tip-pour 1.1s cubic-bezier(0.22, 0.9, 0.36, 1) forwards;
+  animation: flask-tip-pour 760ms cubic-bezier(0.22, 0.9, 0.36, 1) forwards;
 }
 
 body.is-lightening .theme-toggle-flask {
-  animation: flask-tip-return 1.06s cubic-bezier(0.22, 0.9, 0.36, 1) forwards;
+  animation: flask-tip-return 760ms cubic-bezier(0.22, 0.9, 0.36, 1) forwards;
 }
 
 .theme-toggle-icon {
   position: absolute;
   inset: 0;
-  width: 26px;
-  height: 30px;
-  z-index: 3;
-}
-
-.flask-effects {
-  position: absolute;
-  left: 10px;
-  top: 3px;
-  transform: none;
-  width: 220px;
-  height: 136px;
-  overflow: visible;
-  z-index: 1;
-  pointer-events: none;
+  width: 20px;
+  height: 24px;
 }
 
 .flask-shell {
   fill: none;
   stroke: var(--accent-strong);
-  stroke-width: 1.5;
+  stroke-width: 1.4;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .flask-core {
-  fill: rgba(255, 255, 255, 0.08);
+  fill: rgba(255, 255, 255, 0.06);
 }
 
 .flask-liquid-wrap {
   transform-box: fill-box;
-  transform-origin: 76% 24%;
-  filter: drop-shadow(0 1px 6px rgba(111, 124, 114, 0.24));
+  transform-origin: center 36%;
+  filter: drop-shadow(0 1px 4px rgba(111, 124, 114, 0.18));
 }
 
 .flask-glass {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.35);
-  stroke-width: 1.1;
+  stroke: rgba(255, 255, 255, 0.26);
+  stroke-width: 1;
   stroke-linecap: round;
 }
 
@@ -688,159 +674,48 @@ html[data-theme="dark"] .flask-glass {
 
 .flask-liquid {
   fill: url(#flask-liquid-fill);
-}
-
-.flask-liquid-shadow {
-  fill: url(#flask-liquid-shadow-fill);
+  transform-box: fill-box;
+  transform-origin: center center;
+  animation: flask-liquid-idle 4.8s ease-in-out infinite;
 }
 
 .flask-liquid-sheen {
   fill: url(#flask-liquid-sheen-fill);
-}
-
-.flask-bubble {
-  fill: rgba(255, 255, 255, 0.35);
-  animation: flask-bubble-rise 2.4s ease-in-out infinite;
-}
-
-.flask-bubble-a { animation-delay: 0s; }
-.flask-bubble-b { animation-delay: 0.8s; }
-.flask-bubble-c { animation-delay: 1.6s; }
-
-html[data-theme="dark"] .flask-bubble {
-  fill: rgba(236, 229, 216, 0.25);
-}
-
-.flask-liquid-rest,
-.flask-liquid-spill,
-.flask-liquid-shadow,
-.flask-liquid-sheen {
+  opacity: 0.72;
   transform-box: fill-box;
   transform-origin: center center;
-}
-
-.flask-liquid-rest {
-  opacity: 1;
-  animation: flask-liquid-rest-idle 5.2s ease-in-out infinite;
-}
-
-.flask-liquid-rest-shadow {
-  opacity: 0.72;
-  animation: flask-liquid-shadow-idle 5.2s ease-in-out infinite;
-}
-
-.flask-liquid-rest-sheen {
-  opacity: 0.68;
-  animation: flask-liquid-sheen-idle 5.2s ease-in-out infinite;
-}
-
-.flask-liquid-spill,
-.flask-liquid-spill-shadow,
-.flask-liquid-spill-sheen {
-  opacity: 0;
+  animation: flask-liquid-sheen-idle 4.8s ease-in-out infinite;
 }
 
 body.is-darkening .flask-liquid-wrap,
 body.is-lightening .flask-liquid-wrap {
-  animation: flask-liquid-shift 1.04s cubic-bezier(0.24, 0.88, 0.32, 1) forwards;
+  animation: flask-liquid-shift 760ms cubic-bezier(0.24, 0.88, 0.32, 1) forwards;
 }
 
-body.is-darkening .flask-liquid-rest,
-body.is-lightening .flask-liquid-rest,
-body.is-darkening .flask-liquid-rest-shadow,
-body.is-lightening .flask-liquid-rest-shadow,
-body.is-darkening .flask-liquid-rest-sheen,
-body.is-lightening .flask-liquid-rest-sheen {
-  animation: flask-liquid-rest-drain 860ms cubic-bezier(0.26, 0.9, 0.32, 1) forwards;
+body.is-darkening .flask-liquid,
+body.is-lightening .flask-liquid {
+  animation: flask-liquid-slosh 760ms cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
 }
 
-body.is-darkening .flask-liquid-spill,
-body.is-lightening .flask-liquid-spill,
-body.is-darkening .flask-liquid-spill-shadow,
-body.is-lightening .flask-liquid-spill-shadow,
-body.is-darkening .flask-liquid-spill-sheen,
-body.is-lightening .flask-liquid-spill-sheen {
-  animation: flask-liquid-spill-flow 920ms cubic-bezier(0.22, 0.9, 0.32, 1) 120ms forwards;
-}
-
-.flask-stream,
-.flask-drop {
-  opacity: 0;
-  transform-box: fill-box;
-  transform-origin: center center;
-}
-
-.flask-stream {
-  fill: none;
-  stroke: var(--accent-strong);
-  stroke-width: 4.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  filter: drop-shadow(0 4px 8px rgba(18, 18, 15, 0.18));
-}
-
-.flask-stream-trail {
-  stroke-width: 2.4;
-  opacity: 0;
-  stroke: var(--accent);
-}
-
-.flask-drop {
-  fill: var(--accent-strong);
-  filter: drop-shadow(0 4px 6px rgba(18, 18, 15, 0.2));
-}
-
-body.is-darkening .flask-stream-main,
-body.is-lightening .flask-stream-main {
-  animation: flask-stream-pour 1.04s cubic-bezier(0.2, 0.88, 0.32, 1) 170ms forwards;
-}
-
-body.is-darkening .flask-stream-trail,
-body.is-lightening .flask-stream-trail {
-  animation: flask-stream-trail 1.08s cubic-bezier(0.2, 0.88, 0.32, 1) 240ms forwards;
-}
-
-body.is-darkening .flask-drop-a,
-body.is-lightening .flask-drop-a {
-  animation: flask-drop-a 0.84s cubic-bezier(0.3, 0, 0.64, 0.34) 260ms forwards;
-}
-
-body.is-darkening .flask-drop-b,
-body.is-lightening .flask-drop-b {
-  animation: flask-drop-b 0.78s cubic-bezier(0.3, 0, 0.64, 0.34) 320ms forwards;
-}
-
-body.is-darkening .flask-drop-c,
-body.is-lightening .flask-drop-c {
-  animation: flask-drop-c 0.74s cubic-bezier(0.3, 0, 0.64, 0.34) 370ms forwards;
-}
-
-body.is-darkening .flask-drop-d,
-body.is-lightening .flask-drop-d {
-  animation: flask-drop-d 0.72s cubic-bezier(0.3, 0, 0.64, 0.34) 410ms forwards;
-}
-
-body.is-darkening .flask-drop-e,
-body.is-lightening .flask-drop-e {
-  animation: flask-drop-e 0.86s cubic-bezier(0.3, 0, 0.64, 0.34) 460ms forwards;
+body.is-darkening .flask-liquid-sheen,
+body.is-lightening .flask-liquid-sheen {
+  animation: flask-liquid-sheen-slosh 760ms cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
 }
 
 body.is-darkening .theme-splash-blot-a {
-  animation: splash-blot-a-in 1.26s cubic-bezier(0.18, 0.9, 0.32, 1) 240ms forwards;
+  animation: splash-blot-a-in 920ms cubic-bezier(0.22, 0.9, 0.32, 1) 120ms forwards;
 }
 
 body.is-darkening .theme-splash-blot-b {
-  animation: splash-blot-b-in 1.18s cubic-bezier(0.18, 0.9, 0.32, 1) 340ms forwards;
+  animation: splash-blot-b-in 860ms cubic-bezier(0.22, 0.9, 0.32, 1) 180ms forwards;
 }
 
 body.is-lightening .theme-splash-blot-a {
-  animation: splash-blot-a-out 0.98s ease-in forwards;
+  animation: splash-blot-a-out 720ms ease-out forwards;
 }
 
 body.is-lightening .theme-splash-blot-b {
-  animation: splash-blot-b-out 0.92s ease-in 80ms forwards;
+  animation: splash-blot-b-out 680ms ease-out 40ms forwards;
 }
 
 .page-content {
@@ -1141,28 +1016,26 @@ blockquote {
 
 @keyframes flask-tip-pour {
   0%   { transform: rotate(0deg); }
-  18%  { transform: rotate(10deg); }
-  46%  { transform: rotate(68deg); }
-  66%  { transform: rotate(62deg); }
+  24%  { transform: rotate(5deg); }
+  58%  { transform: rotate(14deg); }
   100% { transform: rotate(0deg); }
 }
 
 @keyframes flask-tip-return {
   0%   { transform: rotate(0deg); }
-  16%  { transform: rotate(8deg); }
-  42%  { transform: rotate(60deg); }
-  64%  { transform: rotate(54deg); }
+  22%  { transform: rotate(-4deg); }
+  56%  { transform: rotate(-12deg); }
   100% { transform: rotate(0deg); }
 }
 
 @keyframes flask-liquid-shift {
   0%,
-  22% {
+  28% {
     transform: translate(0, 0) rotate(0deg);
   }
 
-  54% {
-    transform: translate(1.8px, -2.8px) rotate(12deg);
+  56% {
+    transform: translate(0.7px, -0.9px) rotate(7deg);
   }
 
   100% {
@@ -1170,230 +1043,126 @@ blockquote {
   }
 }
 
-@keyframes flask-liquid-rest-drain {
-  0%,
-  24% {
-    opacity: 1;
-    transform: translate(0, 0) scaleY(1);
-  }
-
-  58% {
-    opacity: 0.42;
-    transform: translate(-1px, 2px) scaleY(0.58);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(-2px, 4px) scaleY(0.12);
-  }
-}
-
-@keyframes flask-liquid-rest-idle {
+@keyframes flask-liquid-idle {
   0%,
   100% {
     transform: translateY(0);
   }
 
   50% {
-    transform: translateY(0.35px);
-  }
-}
-
-@keyframes flask-liquid-shadow-idle {
-  0%,
-  100% {
-    opacity: 0.68;
-    transform: translateY(0);
-  }
-
-  50% {
-    opacity: 0.8;
-    transform: translateY(0.45px);
+    transform: translateY(0.3px);
   }
 }
 
 @keyframes flask-liquid-sheen-idle {
   0%,
   100% {
-    opacity: 0.62;
+    opacity: 0.68;
     transform: translateX(0);
   }
 
   50% {
     opacity: 0.82;
-    transform: translateX(0.55px);
+    transform: translateX(0.45px);
   }
 }
 
-@keyframes flask-liquid-spill-flow {
-  0% {
-    opacity: 0;
-    transform: translate(-4px, 8px) scale(0.38, 0.22);
-  }
-
+@keyframes flask-liquid-slosh {
+  0%,
   24% {
-    opacity: 0.78;
+    transform: translate(0, 0) scaleY(1);
   }
 
-  62% {
-    opacity: 1;
-    transform: translate(5px, -2px) scale(1.08, 0.96);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(15px, -6px) scale(1.34, 0.78);
-  }
-}
-
-@keyframes flask-stream-pour {
-  0% {
-    opacity: 0;
-    stroke-dashoffset: 100;
-    transform: translate(0, 0) scaleY(0.2);
-  }
-
-  18% {
-    opacity: 0.9;
-  }
-
-  54% {
-    opacity: 0.96;
-    stroke-dashoffset: 36;
-    transform: translate(6px, 2px) scaleY(1);
+  56% {
+    transform: translate(-0.8px, 0.8px) scaleY(0.92) skewX(-6deg);
   }
 
   100% {
-    opacity: 0;
-    stroke-dashoffset: -18;
-    transform: translate(18px, 8px) scaleY(1.08);
+    transform: translate(0, 0) scaleY(1);
   }
 }
 
-@keyframes flask-stream-trail {
-  0% {
-    opacity: 0;
-    stroke-dashoffset: 100;
-    transform: translate(-2px, -1px) scaleY(0.14);
-  }
-
-  32% {
-    opacity: 0.64;
-  }
-
-  68% {
+@keyframes flask-liquid-sheen-slosh {
+  0%,
+  24% {
     opacity: 0.72;
-    stroke-dashoffset: 28;
-    transform: translate(8px, 4px) scaleY(1);
+    transform: translateX(0);
+  }
+
+  56% {
+    opacity: 0.88;
+    transform: translateX(-0.8px) skewX(-8deg);
   }
 
   100% {
-    opacity: 0;
-    stroke-dashoffset: -24;
-    transform: translate(22px, 10px) scaleY(0.9);
+    opacity: 0.72;
+    transform: translateX(0);
   }
-}
-
-@keyframes flask-drop-a {
-  0% { opacity: 0; transform: translate(0, 0) scale(0.4); }
-  15% { opacity: 0.9; }
-  100% { opacity: 0; transform: translate(36px, 26px) scale(1.18); }
-}
-
-@keyframes flask-drop-b {
-  0% { opacity: 0; transform: translate(0, 0) scale(0.35); }
-  18% { opacity: 0.85; }
-  100% { opacity: 0; transform: translate(42px, 30px) scale(1.02); }
-}
-
-@keyframes flask-drop-c {
-  0% { opacity: 0; transform: translate(0, 0) scale(0.3); }
-  16% { opacity: 0.8; }
-  100% { opacity: 0; transform: translate(46px, 32px) scale(1.08); }
-}
-
-@keyframes flask-drop-d {
-  0% { opacity: 0; transform: translate(0, 0) scale(0.3); }
-  20% { opacity: 0.75; }
-  100% { opacity: 0; transform: translate(54px, 36px) scale(1.2); }
-}
-
-@keyframes flask-drop-e {
-  0% { opacity: 0; transform: translate(0, 0) scale(0.35); }
-  15% { opacity: 0.88; }
-  100% { opacity: 0; transform: translate(66px, 40px) scale(1.14); }
-}
-
-@keyframes flask-bubble-rise {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0; }
-  15% { opacity: 0.8; }
-  50% { transform: translateY(-3px) scale(0.8); opacity: 0.7; }
-  85% { opacity: 0.4; }
 }
 
 @keyframes splash-blot-a-in {
   0% {
     opacity: 0;
-    transform: translate(28px, -32px) rotate(-10deg) scale(0.36);
+    transform: translate(10px, -14px) rotate(-6deg) scale(0.72);
   }
 
-  26% {
-    opacity: 0.94;
+  30% {
+    opacity: 0.34;
   }
 
   72% {
-    opacity: 0.9;
-    transform: translate(0, 42px) rotate(8deg) scale(1.04);
+    opacity: 0.28;
+    transform: translate(-8px, 20px) rotate(2deg) scale(0.96);
   }
 
   100% {
     opacity: 0;
-    transform: translate(-10px, 108px) rotate(20deg) scale(1.18);
+    transform: translate(-18px, 52px) rotate(8deg) scale(1.02);
   }
 }
 
 @keyframes splash-blot-b-in {
   0% {
     opacity: 0;
-    transform: translate(22px, -24px) rotate(-12deg) scale(0.34);
+    transform: translate(8px, -12px) rotate(-8deg) scale(0.7);
   }
 
-  24% {
-    opacity: 0.84;
+  28% {
+    opacity: 0.26;
   }
 
   74% {
-    opacity: 0.78;
-    transform: translate(-2px, 30px) rotate(6deg) scale(1);
+    opacity: 0.22;
+    transform: translate(-6px, 16px) rotate(2deg) scale(0.94);
   }
 
   100% {
     opacity: 0;
-    transform: translate(-12px, 84px) rotate(16deg) scale(1.12);
+    transform: translate(-14px, 40px) rotate(6deg) scale(0.98);
   }
 }
 
 @keyframes splash-blot-a-out {
   0% {
-    opacity: 0.7;
-    transform: translate(-8px, 94px) rotate(18deg) scale(1.12);
+    opacity: 0.24;
+    transform: translate(-14px, 38px) rotate(6deg) scale(0.96);
   }
 
   100% {
     opacity: 0;
-    transform: translate(0, 0) rotate(0deg) scale(0.24);
+    transform: translate(0, 0) rotate(0deg) scale(0.64);
   }
 }
 
 @keyframes splash-blot-b-out {
   0% {
-    opacity: 0.64;
-    transform: translate(-12px, 72px) rotate(14deg) scale(1.06);
+    opacity: 0.2;
+    transform: translate(-10px, 26px) rotate(4deg) scale(0.9);
   }
 
   100% {
     opacity: 0;
-    transform: translate(0, 0) rotate(0deg) scale(0.22);
+    transform: translate(0, 0) rotate(0deg) scale(0.6);
   }
 }
 
