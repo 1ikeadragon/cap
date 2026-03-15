@@ -1942,28 +1942,38 @@ blockquote {
     opacity: 1;
   }
 
-  20% {
-    d: path("M 527 290 L 672 234");
-    opacity: 0.08;
-  }
-
-  40% {
-    d: path("M 527 290 L 679 258");
+  24% {
+    d: path("M 527 290 L 676 240");
     opacity: 1;
   }
 
-  60% {
-    d: path("M 527 290 L 686 282");
+  40% {
+    d: path("M 527 290 L 684 268");
+    opacity: 1;
+  }
+
+  52% {
+    d: path("M 527 290 L 690 296");
+    opacity: 1;
+  }
+
+  68% {
+    d: path("M 527 290 L 690 296");
     opacity: 0.08;
   }
 
-  80% {
-    d: path("M 527 290 L 694 308");
-    opacity: 0.52;
+  82% {
+    d: path("M 527 290 L 690 296");
+    opacity: 1;
+  }
+
+  92% {
+    d: path("M 527 290 L 690 296");
+    opacity: 0.18;
   }
 
   100% {
-    d: path("M 527 290 L 702 332");
+    d: path("M 527 290 L 690 296");
     opacity: 0;
   }
 }
