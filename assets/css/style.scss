@@ -238,14 +238,14 @@ body.theme-transitioning .theme-splash {
 .theme-stars-layer-near {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(8 14) scale(.06)' fill='%23fff9e9' opacity='.95'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(17 38) scale(.072)' fill='%23ffdea5' opacity='.8'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(28 22) scale(.052)' fill='%23f3f7ff' opacity='.88'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(41 16) scale(.054)' fill='%23fff4df' opacity='.86'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(54 31) scale(.066)' fill='%23ffe7b9' opacity='.82'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(66 12) scale(.054)' fill='%23f4f7ff' opacity='.92'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(79 26) scale(.06)' fill='%23fff1d4' opacity='.88'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(91 18) scale(.067)' fill='%23ffe1b0' opacity='.76'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(12 68) scale(.052)' fill='%23fff1d6' opacity='.78'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(26 82) scale(.054)' fill='%23f1f6ff' opacity='.84'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(47 72) scale(.062)' fill='%23ffe0aa' opacity='.84'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(62 88) scale(.052)' fill='%23fff7e7' opacity='.88'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(84 78) scale(.055)' fill='%23f4f8ff' opacity='.8'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(94 62) scale(.058)' fill='%23ffecc4' opacity='.78'/%3E%3C/svg%3E");
   animation:
-    star-drift-near 24s linear infinite,
+    star-drift-near 24s ease-in-out infinite,
     star-twinkle 8s ease-in-out infinite alternate;
 }
 
 .theme-stars-layer-mid {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(5 52) scale(.039)' fill='%23f1f6ff' opacity='.52'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(14 24) scale(.043)' fill='%23ffeecb' opacity='.48'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(23 10) scale(.034)' fill='%23fff4e1' opacity='.45'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(36 44) scale(.041)' fill='%23ffe2b3' opacity='.56'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(49 18) scale(.036)' fill='%23f1f6ff' opacity='.58'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(58 62) scale(.041)' fill='%23fff0d4' opacity='.5'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(72 36) scale(.039)' fill='%23ffdfab' opacity='.48'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(81 8) scale(.036)' fill='%23f4f7ff' opacity='.56'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(89 48) scale(.041)' fill='%23fff0d9' opacity='.5'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(18 92) scale(.036)' fill='%23fff4e1' opacity='.44'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(43 84) scale(.039)' fill='%23f1f6ff' opacity='.52'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(67 94) scale(.041)' fill='%23ffe3b2' opacity='.46'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(92 76) scale(.036)' fill='%23fff2da' opacity='.5'/%3E%3C/svg%3E");
   animation:
-    star-drift-mid 32s linear infinite reverse,
+    star-drift-mid 32s ease-in-out infinite,
     star-twinkle 10s ease-in-out infinite alternate;
   animation-delay: -5s;
 }
@@ -253,7 +253,7 @@ body.theme-transitioning .theme-splash {
 .theme-stars-layer-far {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(10 8) scale(.027)' fill='%23fff6e4' opacity='.28'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(21 58) scale(.029)' fill='%23eff5ff' opacity='.34'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(33 30) scale(.027)' fill='%23ffe8be' opacity='.28'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(46 6) scale(.024)' fill='%23fff4e3' opacity='.25'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(57 48) scale(.029)' fill='%23eff5ff' opacity='.32'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(71 20) scale(.027)' fill='%23ffecc7' opacity='.28'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(83 56) scale(.024)' fill='%23fff4e3' opacity='.3'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(96 28) scale(.029)' fill='%23eff5ff' opacity='.32'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(6 84) scale(.027)' fill='%23ffecc7' opacity='.26'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(29 72) scale(.027)' fill='%23eff5ff' opacity='.3'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(52 88) scale(.024)' fill='%23fff4e3' opacity='.28'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(74 86) scale(.027)' fill='%23eff5ff' opacity='.3'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(88 92) scale(.024)' fill='%23ffecc7' opacity='.26'/%3E%3C/svg%3E");
   animation:
-    star-drift-far 40s linear infinite,
+    star-drift-far 40s ease-in-out infinite,
     star-twinkle 12s ease-in-out infinite alternate;
   animation-delay: -9s;
 }
@@ -2013,32 +2013,44 @@ blockquote {
 }
 
 @keyframes star-drift-near {
-  from {
-    transform: translate3d(0, 0, 0);
+  0% {
+    transform: translate3d(-0.35%, -0.2%, 0);
   }
 
-  to {
-    transform: translate3d(-1.2%, 1.8%, 0);
+  50% {
+    transform: translate3d(0.55%, 0.8%, 0);
+  }
+
+  100% {
+    transform: translate3d(-0.35%, -0.2%, 0);
   }
 }
 
 @keyframes star-drift-mid {
-  from {
-    transform: translate3d(0, 0, 0);
+  0% {
+    transform: translate3d(0.28%, 0.18%, 0);
   }
 
-  to {
-    transform: translate3d(1%, -1.4%, 0);
+  50% {
+    transform: translate3d(-0.42%, -0.58%, 0);
+  }
+
+  100% {
+    transform: translate3d(0.28%, 0.18%, 0);
   }
 }
 
 @keyframes star-drift-far {
-  from {
-    transform: translate3d(0, 0, 0);
+  0% {
+    transform: translate3d(-0.18%, 0.12%, 0);
   }
 
-  to {
-    transform: translate3d(-0.8%, 1%, 0);
+  50% {
+    transform: translate3d(0.24%, -0.3%, 0);
+  }
+
+  100% {
+    transform: translate3d(-0.18%, 0.12%, 0);
   }
 }
 
