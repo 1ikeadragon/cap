@@ -7,9 +7,9 @@ categories: research
 
 Cloudflare's bot protection is one of the most widely deployed WAF/anti-bot solutions on the internet. It uses a combination of JavaScript fingerprinting, TLS fingerprinting (JA3/JA4), browser behaviour analysis, and CAPTCHA challenges to distinguish humans from automated clients.
 
-## How Playwright Works
+## How Browser Indentification Checks Work
+## Why Playwright Gets Blocked
 
-## Why Standard Playwright Gets Blocked
 ## Chromium Source Level Patches
 
 ```cpp
