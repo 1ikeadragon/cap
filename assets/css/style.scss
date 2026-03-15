@@ -749,7 +749,7 @@ body.page-leaving .fsm-edge-ef {
   content: "";
   position: absolute;
   top: 50%;
-  left: 8px;
+  left: 4.5px;
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -1362,7 +1362,7 @@ blockquote {
 @keyframes state-signal {
   0%,
   12% {
-    left: 8px;
+    left: 4.5px;
   }
 
   30%,
@@ -1372,12 +1372,12 @@ blockquote {
 
   60%,
   72% {
-    left: 56px;
+    left: 59.5px;
   }
 
   88%,
   100% {
-    left: 8px;
+    left: 4.5px;
   }
 }
 
