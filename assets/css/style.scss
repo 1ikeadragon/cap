@@ -1354,11 +1354,10 @@ blockquote {
   border: 1px solid var(--line);
   border-radius: 999px;
   text-decoration: none;
-  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  transition: border-color 180ms ease, background-color 180ms ease;
 }
 
 .footer-link:hover {
-  transform: translateY(-1px);
   border-color: var(--accent-strong);
   background: rgba(255, 255, 255, 0.24);
 }
