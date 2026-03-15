@@ -1938,26 +1938,21 @@ blockquote {
 
 @keyframes fsm-edge-break {
   0% {
-    d: path("M 527 290 L 672 234");
+    d: path("M 527 290 L 667 214");
     opacity: 1;
   }
 
-  16% {
-    d: path("M 527 290 L 672 234");
-    opacity: 1;
-  }
-
-  32% {
+  20% {
     d: path("M 527 290 L 672 234");
     opacity: 0.08;
   }
 
-  48% {
+  40% {
     d: path("M 527 290 L 679 258");
     opacity: 1;
   }
 
-  64% {
+  60% {
     d: path("M 527 290 L 686 282");
     opacity: 0.08;
   }
