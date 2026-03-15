@@ -27,16 +27,16 @@ html[data-theme="dark"] {
   color-scheme: dark;
   --paper: #101311;
   --paper-deep: #171b18;
-  --ink: #ece5d8;
-  --muted: #a7a08f;
-  --line: rgba(236, 229, 216, 0.18);
+  --ink: #eadcc2;
+  --muted: #b5a88f;
+  --line: rgba(234, 220, 194, 0.18);
   --accent: #9ca98f;
   --accent-strong: #d8c189;
   --code-bg: #171b18;
   --shadow: rgba(0, 0, 0, 0.42);
   --header-bg: rgba(16, 19, 17, 0.88);
   --footer-bg: rgba(23, 27, 24, 0.62);
-  --link-rule: rgba(236, 229, 216, 0.34);
+  --link-rule: rgba(234, 220, 194, 0.34);
 }
 
 *,
@@ -721,6 +721,7 @@ body.page-leaving .fsm-edge-ef {
   letter-spacing: 0.16em;
   text-decoration: none;
   text-transform: uppercase;
+  color: var(--ink);
 }
 
 .site-title-state {
@@ -1126,6 +1127,7 @@ body.is-darkening .theme-meridian-line-b {
   font-size: clamp(1.65rem, 4vw, 2.5rem);
   line-height: 1.08;
   text-decoration: none;
+  color: var(--ink);
 }
 
 .post-link:hover {
@@ -1196,10 +1198,10 @@ body.is-darkening .theme-meridian-line-b {
 
 .post-content,
 .post-content p,
-.post-content li,
-.post-content blockquote {
+.post-content li {
   font-family: var(--font-serif);
   font-size: 1.08rem;
+  color: var(--ink);
 }
 
 .post-content h2,
@@ -1210,6 +1212,7 @@ body.is-darkening .theme-meridian-line-b {
   letter-spacing: -0.02em;
   margin-top: 2.5em;
   margin-bottom: 0.7em;
+  color: var(--ink);
 }
 
 .post-content h2 {
