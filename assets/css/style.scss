@@ -230,45 +230,20 @@ body.theme-transitioning .theme-splash {
   inset: -6%;
   opacity: 0;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
   filter: drop-shadow(0 0 6px rgba(255, 235, 196, 0.18));
 }
 
 .theme-stars-layer-near {
-  background-image:
-    radial-gradient(circle at 8% 14%, rgba(255, 249, 233, 0.95) 0 1.1px, transparent 2.2px),
-    radial-gradient(circle at 17% 38%, rgba(255, 222, 165, 0.8) 0 1.4px, transparent 2.8px),
-    radial-gradient(circle at 28% 22%, rgba(243, 247, 255, 0.88) 0 0.95px, transparent 2px),
-    radial-gradient(circle at 41% 16%, rgba(255, 244, 223, 0.86) 0 1px, transparent 2.1px),
-    radial-gradient(circle at 54% 31%, rgba(255, 231, 185, 0.82) 0 1.3px, transparent 2.6px),
-    radial-gradient(circle at 66% 12%, rgba(244, 247, 255, 0.92) 0 1px, transparent 2.1px),
-    radial-gradient(circle at 79% 26%, rgba(255, 241, 212, 0.88) 0 1.15px, transparent 2.3px),
-    radial-gradient(circle at 91% 18%, rgba(255, 225, 176, 0.76) 0 1.3px, transparent 2.6px),
-    radial-gradient(circle at 12% 68%, rgba(255, 241, 214, 0.78) 0 0.95px, transparent 2px),
-    radial-gradient(circle at 26% 82%, rgba(241, 246, 255, 0.84) 0 1px, transparent 2.1px),
-    radial-gradient(circle at 47% 72%, rgba(255, 224, 170, 0.84) 0 1.25px, transparent 2.5px),
-    radial-gradient(circle at 62% 88%, rgba(255, 247, 231, 0.88) 0 0.95px, transparent 2px),
-    radial-gradient(circle at 84% 78%, rgba(244, 248, 255, 0.8) 0 1.05px, transparent 2.2px),
-    radial-gradient(circle at 94% 62%, rgba(255, 236, 196, 0.78) 0 1.1px, transparent 2.3px);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(8 14) scale(.05)' fill='%23fff9e9' opacity='.95'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(17 38) scale(.06)' fill='%23ffdea5' opacity='.8'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(28 22) scale(.043)' fill='%23f3f7ff' opacity='.88'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(41 16) scale(.045)' fill='%23fff4df' opacity='.86'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(54 31) scale(.055)' fill='%23ffe7b9' opacity='.82'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(66 12) scale(.045)' fill='%23f4f7ff' opacity='.92'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(79 26) scale(.05)' fill='%23fff1d4' opacity='.88'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(91 18) scale(.056)' fill='%23ffe1b0' opacity='.76'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(12 68) scale(.043)' fill='%23fff1d6' opacity='.78'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(26 82) scale(.045)' fill='%23f1f6ff' opacity='.84'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(47 72) scale(.052)' fill='%23ffe0aa' opacity='.84'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(62 88) scale(.043)' fill='%23fff7e7' opacity='.88'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(84 78) scale(.046)' fill='%23f4f8ff' opacity='.8'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(94 62) scale(.048)' fill='%23ffecc4' opacity='.78'/%3E%3C/svg%3E");
   animation:
     star-drift-near 24s linear infinite,
     star-twinkle 8s ease-in-out infinite alternate;
 }
 
 .theme-stars-layer-mid {
-  background-image:
-    radial-gradient(circle at 5% 52%, rgba(241, 246, 255, 0.52) 0 0.75px, transparent 1.7px),
-    radial-gradient(circle at 14% 24%, rgba(255, 238, 203, 0.48) 0 0.85px, transparent 1.8px),
-    radial-gradient(circle at 23% 10%, rgba(255, 244, 225, 0.45) 0 0.65px, transparent 1.5px),
-    radial-gradient(circle at 36% 44%, rgba(255, 226, 179, 0.56) 0 0.8px, transparent 1.7px),
-    radial-gradient(circle at 49% 18%, rgba(241, 246, 255, 0.58) 0 0.7px, transparent 1.6px),
-    radial-gradient(circle at 58% 62%, rgba(255, 240, 212, 0.5) 0 0.8px, transparent 1.8px),
-    radial-gradient(circle at 72% 36%, rgba(255, 223, 171, 0.48) 0 0.75px, transparent 1.7px),
-    radial-gradient(circle at 81% 8%, rgba(244, 247, 255, 0.56) 0 0.7px, transparent 1.6px),
-    radial-gradient(circle at 89% 48%, rgba(255, 240, 217, 0.5) 0 0.8px, transparent 1.8px),
-    radial-gradient(circle at 18% 92%, rgba(255, 244, 225, 0.44) 0 0.7px, transparent 1.6px),
-    radial-gradient(circle at 43% 84%, rgba(241, 246, 255, 0.52) 0 0.75px, transparent 1.7px),
-    radial-gradient(circle at 67% 94%, rgba(255, 227, 178, 0.46) 0 0.8px, transparent 1.8px),
-    radial-gradient(circle at 92% 76%, rgba(255, 242, 218, 0.5) 0 0.7px, transparent 1.6px);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(5 52) scale(.032)' fill='%23f1f6ff' opacity='.52'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(14 24) scale(.036)' fill='%23ffeecb' opacity='.48'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(23 10) scale(.028)' fill='%23fff4e1' opacity='.45'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(36 44) scale(.034)' fill='%23ffe2b3' opacity='.56'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(49 18) scale(.03)' fill='%23f1f6ff' opacity='.58'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(58 62) scale(.034)' fill='%23fff0d4' opacity='.5'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(72 36) scale(.032)' fill='%23ffdfab' opacity='.48'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(81 8) scale(.03)' fill='%23f4f7ff' opacity='.56'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(89 48) scale(.034)' fill='%23fff0d9' opacity='.5'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(18 92) scale(.03)' fill='%23fff4e1' opacity='.44'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(43 84) scale(.032)' fill='%23f1f6ff' opacity='.52'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(67 94) scale(.034)' fill='%23ffe3b2' opacity='.46'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(92 76) scale(.03)' fill='%23fff2da' opacity='.5'/%3E%3C/svg%3E");
   animation:
     star-drift-mid 32s linear infinite reverse,
     star-twinkle 10s ease-in-out infinite alternate;
@@ -276,20 +251,7 @@ body.theme-transitioning .theme-splash {
 }
 
 .theme-stars-layer-far {
-  background-image:
-    radial-gradient(circle at 10% 8%, rgba(255, 246, 228, 0.28) 0 0.55px, transparent 1.3px),
-    radial-gradient(circle at 21% 58%, rgba(239, 245, 255, 0.34) 0 0.6px, transparent 1.35px),
-    radial-gradient(circle at 33% 30%, rgba(255, 232, 190, 0.28) 0 0.55px, transparent 1.3px),
-    radial-gradient(circle at 46% 6%, rgba(255, 244, 227, 0.25) 0 0.5px, transparent 1.2px),
-    radial-gradient(circle at 57% 48%, rgba(239, 245, 255, 0.32) 0 0.6px, transparent 1.35px),
-    radial-gradient(circle at 71% 20%, rgba(255, 236, 199, 0.28) 0 0.55px, transparent 1.3px),
-    radial-gradient(circle at 83% 56%, rgba(255, 244, 227, 0.3) 0 0.5px, transparent 1.2px),
-    radial-gradient(circle at 96% 28%, rgba(239, 245, 255, 0.32) 0 0.6px, transparent 1.35px),
-    radial-gradient(circle at 6% 84%, rgba(255, 236, 199, 0.26) 0 0.55px, transparent 1.3px),
-    radial-gradient(circle at 29% 72%, rgba(239, 245, 255, 0.3) 0 0.55px, transparent 1.3px),
-    radial-gradient(circle at 52% 88%, rgba(255, 244, 227, 0.28) 0 0.5px, transparent 1.2px),
-    radial-gradient(circle at 74% 86%, rgba(239, 245, 255, 0.3) 0 0.55px, transparent 1.3px),
-    radial-gradient(circle at 88% 92%, rgba(255, 236, 199, 0.26) 0 0.5px, transparent 1.2px);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(10 8) scale(.022)' fill='%23fff6e4' opacity='.28'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(21 58) scale(.024)' fill='%23eff5ff' opacity='.34'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(33 30) scale(.022)' fill='%23ffe8be' opacity='.28'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(46 6) scale(.02)' fill='%23fff4e3' opacity='.25'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(57 48) scale(.024)' fill='%23eff5ff' opacity='.32'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(71 20) scale(.022)' fill='%23ffecc7' opacity='.28'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(83 56) scale(.02)' fill='%23fff4e3' opacity='.3'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(96 28) scale(.024)' fill='%23eff5ff' opacity='.32'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(6 84) scale(.022)' fill='%23ffecc7' opacity='.26'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(29 72) scale(.022)' fill='%23eff5ff' opacity='.3'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(52 88) scale(.02)' fill='%23fff4e3' opacity='.28'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(74 86) scale(.022)' fill='%23eff5ff' opacity='.3'/%3E%3Cpath d='M0 -4L1 -1L4 0L1 1L0 4L-1 1L-4 0L-1 -1Z' transform='translate(88 92) scale(.02)' fill='%23ffecc7' opacity='.26'/%3E%3C/svg%3E");
   animation:
     star-drift-far 40s linear infinite,
     star-twinkle 12s ease-in-out infinite alternate;
