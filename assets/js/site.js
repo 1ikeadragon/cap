@@ -5,7 +5,6 @@
   const themeTransitionDuration = 1500;
   const root = document.documentElement;
   const toggle = document.querySelector("[data-theme-toggle]");
-  const prefersDark = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
   const internalLinks = Array.from(document.querySelectorAll('a[href]'));
   let pageEnterTimer = null;
   let themeDelayTimer = null;
@@ -62,26 +61,10 @@
     }, 420);
   };
 
-  const syncWithSystem = (event) => {
-    if (getStoredTheme()) {
-      return;
-    }
-
-    setTheme(event.matches ? "dark" : "light");
-  };
-
   setTheme(root.getAttribute("data-theme") || "light");
 
   if (toggle) {
     toggle.addEventListener("click", toggleTheme);
-  }
-
-  if (prefersDark) {
-    if (typeof prefersDark.addEventListener === "function") {
-      prefersDark.addEventListener("change", syncWithSystem);
-    } else if (typeof prefersDark.addListener === "function") {
-      prefersDark.addListener(syncWithSystem);
-    }
   }
 
   const clearPageEnter = () => {

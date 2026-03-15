@@ -10,8 +10,7 @@
       stored = null;
     }
 
-    var systemPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    var theme = stored || (systemPrefersDark ? "dark" : "light");
+    var theme = stored || "light";
 
     root.setAttribute("data-theme", theme);
   })();
