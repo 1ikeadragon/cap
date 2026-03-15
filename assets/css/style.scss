@@ -1938,42 +1938,42 @@ blockquote {
 
 @keyframes fsm-edge-break {
   0% {
-    d: path("M 527 290 L 667 214");
+    d: path("M 529 296 L 667 214");
     opacity: 1;
   }
 
   22% {
-    d: path("M 527 290 L 674 236");
+    d: path("M 529 296 L 673 242");
     opacity: 1;
   }
 
   36% {
-    d: path("M 527 290 L 680 258");
+    d: path("M 529 296 L 679 264");
     opacity: 1;
   }
 
   46% {
-    d: path("M 527 290 L 686 286");
+    d: path("M 529 296 L 684 291");
     opacity: 1;
   }
 
   70% {
-    d: path("M 527 290 L 686 286");
+    d: path("M 529 296 L 684 291");
     opacity: 0.08;
   }
 
   84% {
-    d: path("M 527 290 L 686 286");
+    d: path("M 529 296 L 684 291");
     opacity: 1;
   }
 
   92% {
-    d: path("M 527 290 L 686 286");
+    d: path("M 529 296 L 684 291");
     opacity: 0.18;
   }
 
   100% {
-    d: path("M 527 290 L 686 286");
+    d: path("M 529 296 L 684 291");
     opacity: 0;
   }
 }
