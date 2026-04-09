@@ -2,7 +2,7 @@
 layout: post
 title: "The Real Bubble Isn't AI"
 date: 2026-03-15 04:35:00 +0530
-categories: thought
+categories: essay
 ---
 The real bubble isn't AI or, the hype around it. It never was. 
 

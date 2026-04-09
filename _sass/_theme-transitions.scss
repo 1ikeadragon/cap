@@ -1,0 +1,91 @@
+body.is-lightening .theme-radiance-back {
+  animation: theme-radiance-back 1280ms cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
+}
+
+body.is-lightening .theme-radiance-front {
+  animation: theme-radiance-front 1460ms cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
+}
+
+body.is-lightening .theme-diffusion-layer-a {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: theme-diffusion-a 980ms cubic-bezier(0.22, 0.9, 0.32, 1) 60ms forwards;
+}
+
+body.is-lightening .theme-diffusion-layer-b {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: theme-diffusion-b 1120ms cubic-bezier(0.22, 0.9, 0.32, 1) 120ms forwards;
+}
+
+body.is-lightening .theme-diffusion-layer-c {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  animation: theme-diffusion-c 1260ms cubic-bezier(0.22, 0.9, 0.32, 1) 140ms forwards;
+}
+
+body.is-lightening .theme-beam-a {
+  animation: theme-beam-primary 1040ms cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
+}
+
+body.is-lightening .theme-beam-b {
+  animation: theme-beam-secondary 1180ms cubic-bezier(0.22, 0.9, 0.32, 1) 70ms forwards;
+}
+
+body.is-lightening .theme-beam-c {
+  animation: theme-beam-tertiary 1280ms cubic-bezier(0.22, 0.9, 0.32, 1) 120ms forwards;
+}
+
+body.is-lightening .theme-meridian-line-a {
+  animation: theme-meridian-drift 1040ms cubic-bezier(0.22, 0.9, 0.32, 1) 120ms forwards;
+}
+
+body.is-lightening .theme-meridian-line-b {
+  animation: theme-meridian-drift-soft 1180ms cubic-bezier(0.22, 0.9, 0.32, 1) 180ms forwards;
+}
+
+body.is-darkening .theme-radiance-back {
+  animation: theme-shadow-back 1180ms cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
+}
+
+body.is-darkening .theme-radiance-front {
+  animation: theme-shadow-front 1360ms cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
+}
+
+body.is-darkening .theme-diffusion-layer-a {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: theme-shadow-diffusion-a 920ms cubic-bezier(0.22, 0.9, 0.32, 1) 60ms forwards;
+}
+
+body.is-darkening .theme-diffusion-layer-b {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  animation: theme-shadow-diffusion-b 1060ms cubic-bezier(0.22, 0.9, 0.32, 1) 120ms forwards;
+}
+
+body.is-darkening .theme-diffusion-layer-c {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  animation: theme-shadow-diffusion-c 1200ms cubic-bezier(0.22, 0.9, 0.32, 1) 140ms forwards;
+}
+
+body.is-darkening .theme-beam-a {
+  animation: theme-shadow-primary 980ms cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
+}
+
+body.is-darkening .theme-beam-b {
+  animation: theme-shadow-secondary 1120ms cubic-bezier(0.22, 0.9, 0.32, 1) 70ms forwards;
+}
+
+body.is-darkening .theme-beam-c {
+  animation: theme-shadow-tertiary 1220ms cubic-bezier(0.22, 0.9, 0.32, 1) 120ms forwards;
+}
+
+body.is-darkening .theme-meridian-line-a {
+  animation: theme-meridian-shadow 1020ms cubic-bezier(0.22, 0.9, 0.32, 1) 120ms forwards;
+}
+
+body.is-darkening .theme-meridian-line-b {
+  animation: theme-meridian-shadow-soft 1140ms cubic-bezier(0.22, 0.9, 0.32, 1) 180ms forwards;
+}

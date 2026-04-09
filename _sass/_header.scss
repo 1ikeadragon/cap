@@ -1,0 +1,122 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--line);
+  contain: layout style;
+}
+
+.site-header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 0;
+}
+
+.site-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-title {
+  font-family: var(--font-mono);
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.site-title-state {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  width: 64px;
+  height: 16px;
+}
+
+.site-title-state::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 50%;
+  height: 1px;
+  background:
+    linear-gradient(90deg, transparent 0, var(--line) 14%, var(--line) 86%, transparent 100%);
+  transform: translateY(-50%);
+}
+
+.site-title-state::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 4.5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-strong);
+  box-shadow: 0 0 0 6px rgba(111, 124, 114, 0.08);
+  transform: translate(-50%, -50%);
+  animation: state-signal 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.state-node {
+  position: relative;
+  z-index: 1;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--accent-strong);
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 0 0 0 rgba(111, 124, 114, 0);
+  animation: state-node-pulse 3.6s linear infinite;
+}
+
+.state-node-b {
+  animation-delay: 1.2s;
+}
+
+.state-node-c {
+  animation-delay: 2.4s;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav input,
+.site-nav .menu-icon,
+.site-nav label {
+  display: none;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-item {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--muted);
+}
