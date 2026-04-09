@@ -1,21 +1,17 @@
 (() => {
   const storageKey = "stateless-theme";
   const pageEnterDuration = 2900;
-  const pageLeaveDuration = 1344;
-  const themeTransitionDuration = 1500;
+  const pageLeaveDuration = 640;
+  const themeTransitionDuration = 1600;
   const root = document.documentElement;
+  const body = document.body;
   const toggle = document.querySelector("[data-theme-toggle]");
   const internalLinks = Array.from(document.querySelectorAll('a[href]'));
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let pageEnterTimer = null;
-  let themeDelayTimer = null;
-
-  const getStoredTheme = () => {
-    try {
-      return localStorage.getItem(storageKey);
-    } catch (error) {
-      return null;
-    }
-  };
+  let themeTransitionTimer = null;
+  let pendingNavigationHref = null;
+  let isThemeTransitioning = false;
 
   const setStoredTheme = (theme) => {
     try {
@@ -37,28 +33,37 @@
 
   const runThemeTransition = (nextTheme) => {
     const directionClass = nextTheme === "dark" ? "is-darkening" : "is-lightening";
-    document.body.classList.remove("is-darkening", "is-lightening");
-    void document.body.offsetWidth;
-    document.body.classList.add("theme-transitioning", directionClass);
+    if (themeTransitionTimer) {
+      window.clearTimeout(themeTransitionTimer);
+    }
 
-    window.setTimeout(() => {
-      document.body.classList.remove("theme-transitioning", "is-darkening", "is-lightening");
+    isThemeTransitioning = true;
+    body.classList.remove("is-darkening", "is-lightening");
+    void body.offsetWidth;
+    body.classList.add("theme-transitioning", directionClass);
+    setTheme(nextTheme);
+    setStoredTheme(nextTheme);
+
+    if (prefersReducedMotion.matches) {
+      body.classList.remove("theme-transitioning", "is-darkening", "is-lightening");
+      isThemeTransitioning = false;
+      return;
+    }
+
+    themeTransitionTimer = window.setTimeout(() => {
+      body.classList.remove("theme-transitioning", "is-darkening", "is-lightening");
+      themeTransitionTimer = null;
+      isThemeTransitioning = false;
     }, themeTransitionDuration);
   };
 
   const toggleTheme = () => {
-    const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    runThemeTransition(nextTheme);
-
-    if (themeDelayTimer) {
-      window.clearTimeout(themeDelayTimer);
+    if (isThemeTransitioning) {
+      return;
     }
 
-    themeDelayTimer = window.setTimeout(() => {
-      setTheme(nextTheme);
-      setStoredTheme(nextTheme);
-      themeDelayTimer = null;
-    }, 420);
+    const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    runThemeTransition(nextTheme);
   };
 
   setTheme(root.getAttribute("data-theme") || "light");
@@ -121,14 +126,25 @@
       }
 
       event.preventDefault();
+      if (pendingNavigationHref) {
+        return;
+      }
+
+      pendingNavigationHref = link.href;
+
+      if (prefersReducedMotion.matches) {
+        window.location.assign(link.href);
+        return;
+      }
+
       if (pageEnterTimer) {
         window.clearTimeout(pageEnterTimer);
         pageEnterTimer = null;
       }
 
-      document.body.classList.remove("page-entering");
-      void document.body.offsetWidth;
-      document.body.classList.add("page-leaving");
+      body.classList.remove("page-entering");
+      void body.offsetWidth;
+      body.classList.add("page-leaving");
 
       window.setTimeout(() => {
         window.location.assign(link.href);
@@ -137,7 +153,8 @@
   });
 
   window.addEventListener("pageshow", (event) => {
-    document.body.classList.remove("page-leaving");
+    body.classList.remove("page-leaving");
+    pendingNavigationHref = null;
 
     if (event.persisted) {
       replayPageEnter();

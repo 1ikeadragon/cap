@@ -146,7 +146,8 @@
 .post-content ul,
 .post-content ol,
 .post-content pre,
-.post-content blockquote {
+.post-content blockquote,
+.post-content hr {
   margin: 0 0 1.35em;
 }
 
@@ -193,4 +194,30 @@ blockquote {
   color: var(--muted);
   font-family: var(--font-serif);
   font-style: italic;
+}
+
+.page-content hr {
+  width: min(11rem, 38%);
+  height: 1.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  position: relative;
+  overflow: visible;
+  background:
+    linear-gradient(90deg, transparent 0, transparent 18%, var(--line) 18%, var(--line) 42%, transparent 42%, transparent 58%, var(--line) 58%, var(--line) 82%, transparent 82%);
+}
+
+.page-content hr::after {
+  content: "❦";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0 0.5rem;
+  color: var(--accent-strong);
+  background: var(--paper);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1;
+  transform: translate(-50%, -50%);
 }

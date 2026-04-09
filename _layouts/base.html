@@ -28,19 +28,20 @@
     <div class="page-machine" aria-hidden="true">
       <span class="page-mask"></span>
       <svg class="machine-svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-        <defs>
-          <marker id="fsm-arrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
-            <path class="fsm-marker" d="M 0 0.5 L 5.5 3.5 L 0 6.5 Z"/>
-          </marker>
-        </defs>
-        <!-- edges (beneath nodes) — endpoints trimmed to node circumference -->
-        <line class="fsm-edge fsm-edge-ab" x1="125" y1="243" x2="271" y2="154" marker-end="url(#fsm-arrow)"/>
-        <line class="fsm-edge fsm-edge-ad" x1="125" y1="261" x2="287" y2="361" marker-end="url(#fsm-arrow)"/>
-        <line class="fsm-edge fsm-edge-bc" x1="305" y1="137" x2="457" y2="89" marker-end="url(#fsm-arrow)"/>
-        <line class="fsm-edge fsm-edge-be" x1="303" y1="151" x2="493" y2="285" marker-end="url(#fsm-arrow)"/>
-        <line class="fsm-edge fsm-edge-de" x1="319" y1="367" x2="490" y2="306" marker-end="url(#fsm-arrow)"/>
-        <line class="fsm-edge fsm-edge-cf" x1="492" y1="90" x2="667" y2="190" marker-end="url(#fsm-arrow)"/>
-        <path class="fsm-edge fsm-edge-ef" d="M 528.9 297 L 667 214" marker-end="url(#fsm-arrow)"/>
+        <line class="fsm-edge fsm-edge-ab" x1="125" y1="243" x2="271" y2="154"/>
+        <line class="fsm-edge fsm-edge-ad" x1="125" y1="261" x2="287" y2="361"/>
+        <line class="fsm-edge fsm-edge-bc" x1="305" y1="137" x2="457" y2="89"/>
+        <line class="fsm-edge fsm-edge-be" x1="303" y1="151" x2="493" y2="285"/>
+        <line class="fsm-edge fsm-edge-de" x1="319" y1="367" x2="490" y2="306"/>
+        <line class="fsm-edge fsm-edge-cf" x1="492" y1="90" x2="667" y2="190"/>
+        <path class="fsm-edge fsm-edge-ef" d="M 528.9 297 L 667 214"/>
+        <path class="fsm-arrowhead fsm-arrowhead-ab" d="M -8 -4.2 L 0 0 L -8 4.2 Z" transform="translate(271 154) rotate(-31)"/>
+        <path class="fsm-arrowhead fsm-arrowhead-ad" d="M -8 -4.2 L 0 0 L -8 4.2 Z" transform="translate(287 361) rotate(32)"/>
+        <path class="fsm-arrowhead fsm-arrowhead-bc" d="M -8 -4.2 L 0 0 L -8 4.2 Z" transform="translate(457 89) rotate(-18)"/>
+        <path class="fsm-arrowhead fsm-arrowhead-be" d="M -8 -4.2 L 0 0 L -8 4.2 Z" transform="translate(493 285) rotate(35)"/>
+        <path class="fsm-arrowhead fsm-arrowhead-de" d="M -8 -4.2 L 0 0 L -8 4.2 Z" transform="translate(490 306) rotate(-20)"/>
+        <path class="fsm-arrowhead fsm-arrowhead-cf" d="M -8 -4.2 L 0 0 L -8 4.2 Z" transform="translate(667 190) rotate(30)"/>
+        <path class="fsm-arrowhead fsm-arrowhead-ef" d="M -8 -4.2 L 0 0 L -8 4.2 Z" transform="translate(667 214) rotate(-31)"/>
         <!-- nodes (above edges) -->
         <circle class="fsm-node fsm-node-a" cx="110" cy="252" r="18"/>
         <circle class="fsm-node fsm-node-b" cx="290" cy="142" r="16"/>
