@@ -65,7 +65,23 @@ body::before {
 }
 
 html[data-theme="dark"] body::before {
-  content: none;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 47px,
+      rgba(216, 193, 137, 0.025) 47px,
+      rgba(216, 193, 137, 0.025) 48px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 47px,
+      rgba(216, 193, 137, 0.025) 47px,
+      rgba(216, 193, 137, 0.025) 48px
+    );
+  animation: none;
+  will-change: auto;
 }
 
 body::after {
@@ -116,6 +132,10 @@ a {
 a:hover {
   color: var(--accent-strong);
   text-decoration-color: currentColor;
+}
+
+html[data-theme="dark"] a:hover {
+  text-shadow: 0 0 10px var(--glow);
 }
 
 img {

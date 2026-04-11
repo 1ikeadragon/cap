@@ -12,6 +12,8 @@
   --header-bg: rgba(241, 238, 230, 0.92);
   --footer-bg: rgba(229, 224, 211, 0.35);
   --link-rule: rgba(25, 24, 20, 0.35);
+  --glow: transparent;
+  --glow-strong: transparent;
   --content-width: 1080px;
   --outer-width: 1180px;
   --space: 24px;
@@ -34,4 +36,6 @@ html[data-theme="dark"] {
   --header-bg: rgba(16, 19, 17, 0.94);
   --footer-bg: rgba(23, 27, 24, 0.62);
   --link-rule: rgba(234, 220, 194, 0.34);
+  --glow: rgba(216, 193, 137, 0.12);
+  --glow-strong: rgba(216, 193, 137, 0.25);
 }

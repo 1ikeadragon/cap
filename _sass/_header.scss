@@ -39,6 +39,15 @@
   color: var(--ink);
 }
 
+html:not([data-theme="dark"]) .site-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 1.12rem;
+}
+
 .site-title-state {
   position: relative;
   display: flex;
@@ -119,4 +128,21 @@
   text-decoration: none;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+html:not([data-theme="dark"]) .nav-item {
+  font-family: var(--font-serif);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
+html[data-theme="dark"] .site-header {
+  border-bottom-color: rgba(216, 193, 137, 0.1);
+  box-shadow: 0 1px 10px -3px rgba(216, 193, 137, 0.08);
+}
+
+html[data-theme="dark"] .nav-item:hover {
+  text-shadow: 0 0 10px var(--glow);
 }

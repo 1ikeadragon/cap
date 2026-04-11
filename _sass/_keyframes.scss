@@ -589,42 +589,42 @@
 
 @keyframes fsm-edge-break {
   0% {
-    d: path("M 528.9 297 L 667 214");
+    d: path("M 527 290 L 672 211");
     opacity: 1;
   }
 
   22% {
-    d: path("M 528.9 297 L 673 242");
+    d: path("M 527 290 L 677 239");
     opacity: 1;
   }
 
   36% {
-    d: path("M 528.9 297 L 679 264");
+    d: path("M 527 290 L 682 260");
     opacity: 1;
   }
 
   46% {
-    d: path("M 528.9 297 L 684 291");
+    d: path("M 527 290 L 688 290");
     opacity: 1;
   }
 
   70% {
-    d: path("M 528.9 297 L 684 291");
+    d: path("M 527 290 L 688 290");
     opacity: 0.08;
   }
 
   84% {
-    d: path("M 528.9 297 L 684 291");
+    d: path("M 527 290 L 688 290");
     opacity: 1;
   }
 
   92% {
-    d: path("M 528.9 297 L 684 291");
+    d: path("M 527 290 L 688 290");
     opacity: 0.18;
   }
 
   100% {
-    d: path("M 528.9 297 L 684 291");
+    d: path("M 527 290 L 688 290");
     opacity: 0;
   }
 }
