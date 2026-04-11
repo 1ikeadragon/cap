@@ -1,6 +1,7 @@
 .site-footer {
   margin-top: auto;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid;
+  border-image: linear-gradient(90deg, transparent, var(--line) 12%, var(--line) 88%, transparent) 1;
   background: var(--footer-bg);
 }
 
@@ -55,13 +56,8 @@ html[data-theme="dark"] .footer-link:hover {
 }
 
 html[data-theme="dark"] .site-footer {
-  border-top-color: rgba(216, 193, 137, 0.1);
+  border-image: linear-gradient(90deg, transparent, rgba(216, 193, 137, 0.1) 12%, rgba(216, 193, 137, 0.1) 88%, transparent) 1;
   box-shadow: 0 -1px 10px -3px rgba(216, 193, 137, 0.06);
-}
-
-html:not([data-theme="dark"]) .footer-mark {
-  font-style: italic;
-  letter-spacing: 0.01em;
 }
 
 .footer-icon {

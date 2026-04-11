@@ -19,12 +19,6 @@
   color: var(--ink);
 }
 
-html:not([data-theme="dark"]) .post-title,
-html:not([data-theme="dark"]) .page-heading {
-  font-style: italic;
-  letter-spacing: -0.035em;
-}
-
 html[data-theme="dark"] .post-title,
 html[data-theme="dark"] .page-heading {
   text-shadow: 0 0 28px var(--glow);
@@ -39,13 +33,29 @@ html[data-theme="dark"] .page-heading {
 .post-list > li {
   margin: 0 0 22px;
   padding: 26px 0 30px;
-  border-bottom: 1px solid var(--line);
+  position: relative;
   content-visibility: auto;
   contain-intrinsic-size: auto 180px;
 }
 
-.post-list > li:last-child {
-  border-bottom: 0;
+.post-list > li:not(:last-child)::after {
+  content: "❧";
+  display: block;
+  width: min(14rem, 50%);
+  margin: 0 auto;
+  padding-top: 18px;
+  text-align: center;
+  color: var(--accent);
+  font-size: 0.7rem;
+  opacity: 0.32;
+  background-image: linear-gradient(90deg, transparent, var(--line) 10%, transparent 46%, transparent 54%, var(--line) 90%, transparent);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+html[data-theme="dark"] .post-list > li:not(:last-child)::after {
+  text-shadow: 0 0 8px var(--glow-strong);
 }
 
 .post-list h3 {
@@ -58,11 +68,6 @@ html[data-theme="dark"] .page-heading {
   line-height: 1.08;
   text-decoration: none;
   color: var(--ink);
-}
-
-html:not([data-theme="dark"]) .post-link {
-  font-style: italic;
-  letter-spacing: -0.035em;
 }
 
 .post-link:hover {
@@ -119,7 +124,8 @@ html[data-theme="dark"] .taxonomy-chip {
 .post-header {
   margin: 0 0 48px;
   padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid;
+  border-image: linear-gradient(90deg, transparent, var(--line) 8%, var(--line) 92%, transparent) 1;
 }
 
 .post-title {
@@ -291,7 +297,7 @@ html[data-theme="dark"] .page-content hr {
     linear-gradient(90deg, transparent 0, transparent 18%, rgba(216, 193, 137, 0.12) 18%, rgba(216, 193, 137, 0.12) 42%, transparent 42%, transparent 58%, rgba(216, 193, 137, 0.12) 58%, rgba(216, 193, 137, 0.12) 82%, transparent 82%);
 }
 
-.post-content > p:first-of-type::first-letter {
+.h-entry .post-content > p:first-of-type::first-letter {
   font-family: var(--font-serif);
   font-size: 3.4em;
   float: left;
@@ -302,6 +308,6 @@ html[data-theme="dark"] .page-content hr {
   font-weight: 400;
 }
 
-html[data-theme="dark"] .post-content > p:first-of-type::first-letter {
+html[data-theme="dark"] .h-entry .post-content > p:first-of-type::first-letter {
   text-shadow: 0 0 16px var(--glow-strong);
 }
