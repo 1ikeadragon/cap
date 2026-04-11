@@ -7,6 +7,7 @@
   visibility: hidden;
   overflow: clip;
   contain: strict;
+  content-visibility: hidden;
 }
 
 .page-content,
@@ -18,11 +19,13 @@
 
 body.page-entering .page-machine {
   visibility: visible;
+  content-visibility: visible;
   animation: machine-enter-lifecycle 2752ms cubic-bezier(0.65, 0, 0.35, 1) both;
 }
 
 body.page-leaving .page-machine {
   visibility: visible;
+  content-visibility: visible;
   animation: machine-fadein 220ms ease-out both;
 }
 
@@ -200,7 +203,7 @@ body.page-entering .fsm-edge-ef {
 body.page-entering .fsm-arrowhead-ef {
   animation:
     fsm-arrowhead-in 280ms cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards,
-    fsm-arrowhead-out 340ms ease-in                       840ms forwards;
+    fsm-arrowhead-out 280ms ease-in                       620ms forwards;
 }
 
 body.page-leaving .fsm-node,

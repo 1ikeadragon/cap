@@ -65,23 +65,7 @@ body::before {
 }
 
 html[data-theme="dark"] body::before {
-  background:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 47px,
-      rgba(216, 193, 137, 0.025) 47px,
-      rgba(216, 193, 137, 0.025) 48px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 47px,
-      rgba(216, 193, 137, 0.025) 47px,
-      rgba(216, 193, 137, 0.025) 48px
-    );
-  animation: none;
-  will-change: auto;
+  content: none;
 }
 
 body::after {
