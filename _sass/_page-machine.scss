@@ -196,14 +196,14 @@ body.page-entering .fsm-arrowhead-cf {
 
 body.page-entering .fsm-edge-ef {
   animation:
-    fsm-edge-in    350ms cubic-bezier(0.22, 1, 0.36, 1) 195ms forwards,
-    fsm-edge-break 920ms ease-in-out                    650ms  forwards;
+    fsm-edge-in  350ms cubic-bezier(0.22, 1, 0.36, 1) 195ms forwards,
+    fsm-edge-out 440ms ease-in                         870ms forwards;
 }
 
 body.page-entering .fsm-arrowhead-ef {
   animation:
-    fsm-arrowhead-in 280ms cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards,
-    fsm-arrowhead-out 280ms ease-in                       620ms forwards;
+    fsm-arrowhead-in  280ms cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards,
+    fsm-arrowhead-out 340ms ease-in                        870ms forwards;
 }
 
 body.page-leaving .fsm-node,

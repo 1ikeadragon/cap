@@ -192,12 +192,12 @@ body.is-lightening .theme-stars {
 html[data-theme="dark"] .theme-radiance {
   background:
     radial-gradient(circle at 18% 18%, rgba(142, 165, 155, 0.08), transparent 28%),
-    radial-gradient(circle at 82% 24%, rgba(216, 193, 137, 0.08), transparent 26%),
+    radial-gradient(circle at 82% 24%, rgba(148, 163, 184, 0.08), transparent 26%),
     radial-gradient(circle at 50% 108%, rgba(34, 42, 39, 0.22), transparent 36%);
 }
 
 html[data-theme="dark"] .theme-meridian-line {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(216, 193, 137, 0.2) 20%, rgba(216, 193, 137, 0.08) 52%, rgba(255, 255, 255, 0));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(148, 163, 184, 0.2) 20%, rgba(148, 163, 184, 0.08) 52%, rgba(255, 255, 255, 0));
 }
 
 body.is-lightening .theme-radiance {
@@ -267,4 +267,39 @@ body.is-darkening .theme-meridian-line-a {
 
 body.is-darkening .theme-meridian-line-b {
   left: 36%;
+}
+
+.theme-pixel-veil {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 18;
+  opacity: 0;
+  visibility: hidden;
+  background-size: 8px 8px;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  contain: strict;
+  content-visibility: hidden;
+}
+
+body.theme-transitioning .theme-pixel-veil {
+  visibility: visible;
+  content-visibility: visible;
+  animation: pixel-veil-pulse 1600ms steps(14, end) forwards;
+}
+
+body.is-darkening .theme-pixel-veil {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' shape-rendering='crispEdges'><rect width='4' height='4' fill='%23c8d0dc'/><rect x='4' y='4' width='4' height='4' fill='%23c8d0dc'/></svg>");
+  mix-blend-mode: screen;
+}
+
+body.is-lightening .theme-pixel-veil {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' shape-rendering='crispEdges'><rect width='4' height='4' fill='%233a4250'/><rect x='4' y='4' width='4' height='4' fill='%233a4250'/></svg>");
+  mix-blend-mode: multiply;
+}
+
+html[data-theme="dark"] .theme-stars-layer {
+  filter: grayscale(1) brightness(1.05) contrast(1.1);
 }
