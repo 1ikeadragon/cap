@@ -10,7 +10,7 @@ It's the fact that we are slowly losing cognitive capability and social connecti
 
 How far will you go before you realize it? What will it take?
 
->“We see a future where intelligence is a utility, like electricity or water, and people buy it from us on a meter,” Sam Altman, March 11.
+>We see a future where intelligence is a utility, like electricity or water, and people buy it from us on a meter. — Sam Altman, March 11.
 
 When you realize, it will be too late. Your attention were already being farmed by algorithms optimizing for emotions. And now, your existence is farmed too. Every conversation, every token churned is an identity captured, a seed planted that will eventually outgrow you.
 

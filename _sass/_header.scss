@@ -2,11 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  background: var(--header-bg);
-  border-bottom: 1px solid;
-  border-image: linear-gradient(90deg, transparent, var(--line) 12%, var(--line) 88%, transparent) 1;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper) 46%, transparent 100%);
+  border-bottom: 0;
   contain: layout style;
 }
 
@@ -123,8 +120,8 @@
 }
 
 html[data-theme="dark"] .site-header {
-  border-image: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.1) 12%, rgba(148, 163, 184, 0.1) 88%, transparent) 1;
-  box-shadow: 0 1px 10px -3px rgba(148, 163, 184, 0.08);
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper) 48%, transparent 100%);
+  box-shadow: none;
 }
 
 html[data-theme="dark"] .nav-item:hover {

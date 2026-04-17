@@ -2,7 +2,8 @@
   const storageKey = "stateless-theme";
   const pageEnterDuration = 2900;
   const pageLeaveDuration = 640;
-  const themeTransitionDuration = 1600;
+  const themeTransitionDuration = 800;
+  const themeSwapDelay = 400;
   const root = document.documentElement;
   const body = document.body;
   const toggle = document.querySelector("[data-theme-toggle]");
@@ -10,6 +11,7 @@
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let pageEnterTimer = null;
   let themeTransitionTimer = null;
+  let themeSwapTimer = null;
   let pendingNavigationHref = null;
   let isThemeTransitioning = false;
 
@@ -36,19 +38,28 @@
     if (themeTransitionTimer) {
       window.clearTimeout(themeTransitionTimer);
     }
+    if (themeSwapTimer) {
+      window.clearTimeout(themeSwapTimer);
+    }
 
     isThemeTransitioning = true;
     body.classList.remove("is-darkening", "is-lightening");
     void body.offsetWidth;
     body.classList.add("theme-transitioning", directionClass);
-    setTheme(nextTheme);
-    setStoredTheme(nextTheme);
 
     if (prefersReducedMotion.matches) {
+      setTheme(nextTheme);
+      setStoredTheme(nextTheme);
       body.classList.remove("theme-transitioning", "is-darkening", "is-lightening");
       isThemeTransitioning = false;
       return;
     }
+
+    themeSwapTimer = window.setTimeout(() => {
+      setTheme(nextTheme);
+      setStoredTheme(nextTheme);
+      themeSwapTimer = null;
+    }, themeSwapDelay);
 
     themeTransitionTimer = window.setTimeout(() => {
       body.classList.remove("theme-transitioning", "is-darkening", "is-lightening");

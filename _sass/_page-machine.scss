@@ -112,8 +112,8 @@ body.page-entering .fsm-node-d {
 
 body.page-entering .fsm-node-e {
   animation:
-    fsm-node-in  460ms cubic-bezier(0.22, 1, 0.36, 1) 160ms forwards,
-    fsm-node-out 460ms ease-in                         940ms  forwards;
+    fsm-node-in  460ms cubic-bezier(0.22, 1, 0.36, 1) 160ms  forwards,
+    fsm-node-out 480ms ease-in                         1680ms forwards;
 }
 
 body.page-entering .fsm-node-f {
@@ -195,15 +195,19 @@ body.page-entering .fsm-arrowhead-cf {
 }
 
 body.page-entering .fsm-edge-ef {
+  transform-box: view-box;
+  transform-origin: 0 0;
   animation:
-    fsm-edge-in  350ms cubic-bezier(0.22, 1, 0.36, 1) 195ms forwards,
-    fsm-edge-out 440ms ease-in                         870ms forwards;
+    fsm-edge-in       350ms cubic-bezier(0.22, 1, 0.36, 1) 195ms forwards,
+    fsm-edge-ef-open  900ms cubic-bezier(0.42, 0, 0.3, 1)  1400ms forwards;
 }
 
 body.page-entering .fsm-arrowhead-ef {
+  transform-box: view-box;
+  transform-origin: 0 0;
   animation:
-    fsm-arrowhead-in  280ms cubic-bezier(0.22, 1, 0.36, 1) 240ms forwards,
-    fsm-arrowhead-out 340ms ease-in                        870ms forwards;
+    fsm-arrowhead-in      280ms cubic-bezier(0.22, 1, 0.36, 1) 240ms  forwards,
+    fsm-arrowhead-ef-open 900ms cubic-bezier(0.42, 0, 0.3, 1)  1400ms forwards;
 }
 
 body.page-leaving .fsm-node,

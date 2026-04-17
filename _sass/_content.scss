@@ -34,8 +34,6 @@ html[data-theme="dark"] .page-heading {
   margin: 0 0 22px;
   padding: 26px 0 30px;
   position: relative;
-  content-visibility: auto;
-  contain-intrinsic-size: auto 180px;
 }
 
 .post-list > li:not(:last-child)::after {

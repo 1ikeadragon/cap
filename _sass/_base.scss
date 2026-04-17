@@ -66,7 +66,10 @@ body::before {
 }
 
 html[data-theme="dark"] body::before {
-  content: none;
+  background: none;
+  background-image: radial-gradient(circle at center, rgba(148, 163, 184, 0.14) 1px, transparent 1.4px);
+  background-size: 32px 32px;
+  animation: none;
 }
 
 body::after {
@@ -97,13 +100,13 @@ blockquote,
 .moon-crescent,
 .footer-link {
   transition:
-    background 720ms ease,
-    background-color 720ms ease,
-    border-color 720ms ease,
-    color 720ms ease,
-    box-shadow 720ms ease,
-    opacity 360ms ease,
-    transform 240ms ease;
+    background 360ms ease,
+    background-color 360ms ease,
+    border-color 360ms ease,
+    color 360ms ease,
+    box-shadow 360ms ease,
+    opacity 240ms ease,
+    transform 200ms ease;
 }
 
 a {
