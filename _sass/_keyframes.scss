@@ -279,44 +279,51 @@
   }
 }
 
-/* L→R sweep: clip-path reveals veil from left, covers full screen at 50%,
-   then uncovers from left to right. JS triggers setTheme() at ~50% so the
-   visual flip happens while fully masked. */
-@keyframes pixel-sweep-lr {
+/* Dijkstra-style flood-fill veil: each .veil-cell snaps from opacity 0 → 1
+   at its own animation-delay (computed per-cell by site.js from the
+   distance to the toggle). steps(1, end) yields the authentic cell-visit
+   snap instead of a soft fade. */
+@keyframes veil-cell-flood {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Wrapper lifecycle: hold fully covered from 0 → 60% (0–1200ms), then
+   dissolve 60 → 100% (1200–2000ms). Ensures the flood is visible long
+   enough to read, and cleans up without a hard cutoff. */
+@keyframes veil-wrap-lifecycle {
   0% {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     opacity: 1;
   }
 
-  50% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  60% {
     opacity: 1;
   }
 
   100% {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-    opacity: 1;
+    opacity: 0;
   }
 }
 
-/* FSM edge-ef swing-open: pivot pinned at node e (527,290), end of line
-   arcs outward through bottom-right corner of viewBox. Line end points
-   chosen so each keyframe radius × angle = (165,-29°) → (220,8°) → (290,40°),
-   giving smooth rotate+stretch escape past viewBox (800×500). */
+/* FSM edge-ef swing-open: pivot pinned at node e (527,290). Endpoint arcs
+   outward staying inside viewBox (800×500). Vectors are polar-derived:
+   (165,-29°) → (200,-3°) → (231,+23°), a 52° swing with 1.4× stretch.
+   Ends at opacity 0 so the stub never lingers while the machine wrapper
+   cleans itself up between 2112-2752ms. */
 @keyframes fsm-edge-ef-open {
   0% {
     d: path("M 527 290 L 672 211");
     opacity: 1;
   }
 
-  55% {
-    d: path("M 527 290 L 745 321");
-    opacity: 1;
+  50% {
+    d: path("M 527 290 L 727 280");
+    opacity: 0.92;
   }
 
   100% {
-    d: path("M 527 290 L 749 476");
-    opacity: 0.18;
+    d: path("M 527 290 L 740 380");
+    opacity: 0;
   }
 }
 
@@ -326,14 +333,14 @@
     opacity: 1;
   }
 
-  55% {
-    transform: translate(745px, 321px) rotate(8deg);
-    opacity: 1;
+  50% {
+    transform: translate(727px, 280px) rotate(-3deg);
+    opacity: 0.92;
   }
 
   100% {
-    transform: translate(749px, 476px) rotate(40deg);
-    opacity: 0.18;
+    transform: translate(740px, 380px) rotate(23deg);
+    opacity: 0;
   }
 }
 
@@ -370,4 +377,18 @@
   100% {
     transform: translate3d(-1.5%, -1.2%, 0) scale(1);
   }
+}
+
+/* Drifts the dot grid one cell diagonally per loop — seamless because
+   the 32px period of the pattern matches the translation amount. */
+@keyframes dot-grid-drift {
+  from { background-position: 0 0; }
+  to   { background-position: 32px 32px; }
+}
+
+/* Ambient glow wander — translates the two radial ellipses slowly so
+   the dark background has a sense of depth without distraction. */
+@keyframes ambient-drift {
+  0%   { transform: translate3d(-1.4%, -0.9%, 0); }
+  100% { transform: translate3d(1.4%, 0.9%, 0); }
 }

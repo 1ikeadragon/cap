@@ -41,6 +41,10 @@ html[data-theme="dark"] body {
     radial-gradient(circle at 82% 92%, rgba(148, 163, 184, 0.04), transparent 30%),
     linear-gradient(180deg, rgba(228, 231, 236, 0.02), transparent 24%),
     var(--paper);
+  font-family: var(--font-mono);
+  font-size: 15.5px;
+  line-height: 1.68;
+  letter-spacing: -0.01em;
 }
 
 body::before,
@@ -69,7 +73,10 @@ html[data-theme="dark"] body::before {
   background: none;
   background-image: radial-gradient(circle at center, rgba(148, 163, 184, 0.14) 1px, transparent 1.4px);
   background-size: 32px 32px;
-  animation: none;
+  /* 80s slow diagonal drift — one full grid cell (32px) per loop so it
+     seams perfectly. Imperceptibly alive, no jitter. */
+  animation: dot-grid-drift 80s linear infinite;
+  will-change: background-position;
 }
 
 body::after {
@@ -80,7 +87,12 @@ body::after {
 }
 
 html[data-theme="dark"] body::after {
-  background: linear-gradient(180deg, transparent, rgba(228, 231, 236, 0.03), transparent);
+  background:
+    radial-gradient(ellipse 38vw 28vh at 22% 28%, rgba(148, 163, 184, 0.055), transparent 60%),
+    radial-gradient(ellipse 44vw 32vh at 78% 72%, rgba(168, 178, 195, 0.04), transparent 60%);
+  /* 46s drifting ambient glow — replaces the horizontal scanline with a
+     very slow wander so the background feels alive but never jumpy. */
+  animation: ambient-drift 46s ease-in-out infinite alternate;
 }
 
 body,

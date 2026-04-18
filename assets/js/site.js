@@ -2,11 +2,15 @@
   const storageKey = "stateless-theme";
   const pageEnterDuration = 2900;
   const pageLeaveDuration = 640;
-  const themeTransitionDuration = 800;
-  const themeSwapDelay = 400;
+  const themeTransitionDuration = 2000;
+  const themeSwapDelay = 900;
+  const veilCols = 30;
+  const veilRows = 18;
+  const veilStepMsPerCell = 22;
   const root = document.documentElement;
   const body = document.body;
   const toggle = document.querySelector("[data-theme-toggle]");
+  const veil = document.querySelector(".theme-pixel-veil");
   const internalLinks = Array.from(document.querySelectorAll('a[href]'));
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let pageEnterTimer = null;
@@ -14,6 +18,54 @@
   let themeSwapTimer = null;
   let pendingNavigationHref = null;
   let isThemeTransitioning = false;
+  let veilCells = [];
+
+  const buildVeilGrid = () => {
+    if (!veil) {
+      return;
+    }
+    veil.style.setProperty("--veil-cols", veilCols);
+    veil.style.setProperty("--veil-rows", veilRows);
+    const fragment = document.createDocumentFragment();
+    const total = veilCols * veilRows;
+    for (let i = 0; i < total; i++) {
+      const cell = document.createElement("span");
+      cell.className = "veil-cell";
+      fragment.appendChild(cell);
+    }
+    veil.appendChild(fragment);
+    veilCells = Array.from(veil.querySelectorAll(".veil-cell"));
+  };
+
+  /* Compute per-cell animation-delay from Euclidean distance (in cell units)
+     to the source point. The toggle's center is the source, so the flood
+     emanates from wherever the user clicked. */
+  const primeVeilFlood = () => {
+    if (!veil || veilCells.length === 0) {
+      return;
+    }
+    let sx, sy;
+    if (toggle) {
+      const rect = toggle.getBoundingClientRect();
+      sx = rect.left + rect.width / 2;
+      sy = rect.top + rect.height / 2;
+    } else {
+      sx = window.innerWidth / 2;
+      sy = window.innerHeight / 2;
+    }
+    const cellW = window.innerWidth / veilCols;
+    const cellH = window.innerHeight / veilRows;
+    for (let i = 0; i < veilCells.length; i++) {
+      const col = i % veilCols;
+      const row = Math.floor(i / veilCols);
+      const cx = col * cellW + cellW / 2;
+      const cy = row * cellH + cellH / 2;
+      const dx = (cx - sx) / cellW;
+      const dy = (cy - sy) / cellH;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      veilCells[i].style.setProperty("--cell-d", `${Math.round(dist * veilStepMsPerCell)}ms`);
+    }
+  };
 
   const setStoredTheme = (theme) => {
     try {
@@ -43,8 +95,15 @@
     }
 
     isThemeTransitioning = true;
-    body.classList.remove("is-darkening", "is-lightening");
+    body.classList.remove("is-darkening", "is-lightening", "theme-transitioning");
+    veilCells.forEach((cell) => {
+      cell.style.animation = "none";
+    });
     void body.offsetWidth;
+    primeVeilFlood();
+    veilCells.forEach((cell) => {
+      cell.style.animation = "";
+    });
     body.classList.add("theme-transitioning", directionClass);
 
     if (prefersReducedMotion.matches) {
@@ -78,6 +137,7 @@
   };
 
   setTheme(root.getAttribute("data-theme") || "light");
+  buildVeilGrid();
 
   if (toggle) {
     toggle.addEventListener("click", toggleTheme);

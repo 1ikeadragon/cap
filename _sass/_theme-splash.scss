@@ -5,29 +5,45 @@
   z-index: 18;
   opacity: 0;
   visibility: hidden;
-  background-size: 8px 8px;
-  background-repeat: repeat;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
+  display: grid;
+  grid-template-columns: repeat(var(--veil-cols, 30), 1fr);
+  grid-template-rows: repeat(var(--veil-rows, 18), 1fr);
   contain: strict;
   content-visibility: hidden;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  will-change: clip-path, opacity;
 }
 
 body.theme-transitioning .theme-pixel-veil {
   visibility: visible;
   content-visibility: visible;
-  opacity: 1;
-  animation: pixel-sweep-lr 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  /* hold at full cover from 0–60% (0–1200ms), then dissolve 60→100% (1200–2000ms).
+     Theme attribute swap fires via JS at 900ms when the flood has filled ~90%. */
+  animation: veil-wrap-lifecycle 2000ms ease-out forwards;
+}
+
+.veil-cell {
+  opacity: 0;
+  will-change: opacity;
+  background-image: var(--veil-pattern);
+  background-size: 8px 8px;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Each cell snaps to opacity 1 at its computed distance-delay (set inline
+   by site.js). steps(1, end) gives the authentic Dijkstra cell-activation
+   snap rather than a soft fade. */
+body.theme-transitioning .veil-cell {
+  animation: veil-cell-flood 80ms steps(1, end) var(--cell-d, 0ms) forwards;
 }
 
 body.is-darkening .theme-pixel-veil {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' shape-rendering='crispEdges'><rect width='4' height='4' fill='%23c8d0dc'/><rect x='4' y='4' width='4' height='4' fill='%23c8d0dc'/></svg>");
+  --veil-pattern: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' shape-rendering='crispEdges'><rect width='4' height='4' fill='%23c8d0dc'/><rect x='4' y='4' width='4' height='4' fill='%23c8d0dc'/></svg>");
   mix-blend-mode: screen;
 }
 
 body.is-lightening .theme-pixel-veil {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' shape-rendering='crispEdges'><rect width='4' height='4' fill='%233a4250'/><rect x='4' y='4' width='4' height='4' fill='%233a4250'/></svg>");
+  --veil-pattern: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' shape-rendering='crispEdges'><rect width='4' height='4' fill='%233a4250'/><rect x='4' y='4' width='4' height='4' fill='%233a4250'/></svg>");
   mix-blend-mode: multiply;
 }

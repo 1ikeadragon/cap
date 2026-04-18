@@ -313,3 +313,62 @@ html[data-theme="dark"] .page-content hr {
 html[data-theme="dark"] .h-entry .post-content > p:first-of-type::first-letter {
   text-shadow: 0 0 16px var(--glow-strong);
 }
+
+/* Dark mode mono typography — hacktron / aiko / supermemory vibe.
+   Kept readable with slightly tighter letter-spacing and scaled sizes
+   (mono glyphs are wider than serif/sans at equal font-size). */
+html[data-theme="dark"] .page-heading,
+html[data-theme="dark"] .post-title,
+html[data-theme="dark"] .post-link,
+html[data-theme="dark"] .post-content,
+html[data-theme="dark"] .post-content p,
+html[data-theme="dark"] .post-content li,
+html[data-theme="dark"] .post-content h2,
+html[data-theme="dark"] .post-content h3,
+html[data-theme="dark"] .post-content h4,
+html[data-theme="dark"] .post-excerpt,
+html[data-theme="dark"] .post-list p,
+html[data-theme="dark"] blockquote {
+  font-family: var(--font-mono);
+  letter-spacing: -0.015em;
+}
+
+html[data-theme="dark"] .post-link {
+  font-size: clamp(1.35rem, 3.2vw, 2.05rem);
+  line-height: 1.14;
+  font-weight: 500;
+}
+
+html[data-theme="dark"] .post-title {
+  font-size: clamp(1.55rem, 2.6vw, 2.3rem);
+  line-height: 1.14;
+  font-weight: 500;
+}
+
+html[data-theme="dark"] .post-content h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+html[data-theme="dark"] .post-content h3 {
+  font-size: 1.18rem;
+  font-weight: 500;
+}
+
+html[data-theme="dark"] .post-content,
+html[data-theme="dark"] .post-content p,
+html[data-theme="dark"] .post-content li,
+html[data-theme="dark"] .post-excerpt,
+html[data-theme="dark"] .post-list p {
+  font-size: 0.96rem;
+  line-height: 1.68;
+}
+
+/* Drop-cap looks wrong in mono — collapse it in dark mode. */
+html[data-theme="dark"] .h-entry .post-content > p:first-of-type::first-letter {
+  font-family: var(--font-mono);
+  font-size: 1em;
+  float: none;
+  line-height: inherit;
+  padding: 0;
+}
